@@ -1,0 +1,15 @@
+<transition :name="name">
+    <div v-show="visible" class="toast-container">
+        <div :class="['ac-toast', toastParams ? toastParams.cls: '']" >
+            <div class="ac-toast-wrapper">
+                <img v-if="icon" :src="icon" alt="">
+                <img v-if="toastParams && toastParams.icon" :src="toastParams.icon" alt="">
+                <div v-if="msg" class="ac-msg">
+                    {{msg}}
+                    <slot></slot>
+                </div>
+            </div>
+        </div>
+    </div>
+</transition>
+

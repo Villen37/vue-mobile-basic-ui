@@ -1,0 +1,46 @@
+
+//淡入淡出
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    opacity: 0;
+}
+//向顶部渐现
+.to-top-enter-active, .to-top-leave-active {
+      transition: all .5s;
+      display: block!important;
+&>*,
+&>.children-active{
+      transition: transform .5s;
+      transform: translateY(0);
+  }
+}
+.to-top-enter, .to-top-leave-to {
+    opacity: 0;
+    display: block!important;
+&>*,
+&>.children-active{
+      transition: transform .5s;
+      transform: translateY(1rem);
+  }
+}
+//向底部渐现
+.to-bottom-enter-active, .to-bottom-leave-active {
+  transition: all .5s;
+  display: block!important;
+  &>*,
+  &>.children-active{
+    transition: transform .5s;
+    transform: translateY(0);
+  }
+}
+.to-bottom-enter, .to-bottom-leave-to {
+  opacity: 0;
+  display: block!important;
+  &>*,
+  &>.children-active{
+    transition: transform .5s;
+    transform: translateY(-1rem);
+  }
+}

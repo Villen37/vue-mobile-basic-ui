@@ -1,0 +1,69 @@
+.toast-container{
+  z-index: 9999;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  min-width: 3.6rem;
+  min-height: 2.4rem;
+  position: fixed;
+}
+.ac-toast {
+  width: 3.6rem;
+  height: 2.4rem;
+  border-radius: .06rem;
+  font-size: .32rem;
+  color: #ffffff;
+  position: fixed;
+  left: 50%;
+  top: 30%;
+  margin-left: -1.8rem;
+  background: rgba(0, 0, 0, 0.8);
+
+  .ac-toast-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  img {
+    margin-bottom: .24rem;
+  }
+
+  .ac-msg {
+    //height: .4rem;
+    padding: 0 .46rem;
+    //line-height: .4rem;
+    //text-align: justify;
+    word-break:break-all;
+  }
+}
+.ac-success {
+  img {
+    display: block;
+    width: .67rem;
+    height: .46rem;
+  }
+}
+.ac-error {
+  img {
+    display: block;
+    width: .53rem;
+    height: .53rem;
+  }
+}
+.ac-warning {
+  img {
+    display: block;
+    width: .07rem;
+    height: .59rem;
+  }
+}
+.ac-regret {
+  img {
+    display: block;
+    width: .85rem;
+    height: .85rem;
+  }
+}

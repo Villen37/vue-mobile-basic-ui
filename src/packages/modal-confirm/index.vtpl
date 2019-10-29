@@ -1,0 +1,22 @@
+<transition :name="name">
+<div v-show="visible" :class="['bg-container', bgContainerCls, showMask ? '' : 'transparent']" @click.self="clickMask" :style="{zIndex: 1001}">
+    <div class="alert-container">
+        <div v-if="showCloseIcon" class="cancel-icon" @click="cancel"></div>
+        <div class="item">
+            <div class="title" v-html="title"></div>
+            <div class="content">
+                {{content}}
+                <slot></slot>
+            </div>
+            <div class="filter"></div>
+        </div>
+        <div class="btn-group">
+            <div class="cancel-btn" @click="cancel" v-if="showCancelBtn">{{cancelBtnText}}</div>
+            <div class="confirm-btn" @click="confirm" v-if="showConfirmBtn">{{confirmBtnText}}</div>
+        </div>
+        <div class="tip">{{tipText}}</div>
+
+    </div>
+</div>
+</transition>
+

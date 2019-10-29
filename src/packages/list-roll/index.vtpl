@@ -1,0 +1,5 @@
+<div class="ac-roll-container" :style="{height: listHeight}">
+    <div class="ac-roll-body">
+        <slot name="listContent"></slot>
+    </div>
+</div>

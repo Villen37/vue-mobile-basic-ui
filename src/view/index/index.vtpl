@@ -1,0 +1,34 @@
+<div class="components">
+
+
+    <div class="comp-1">
+        <div class="comp-title" @click="modalShow">Modal</div>
+        <ModalConfirm name='to-top' visibleProp="block" title="这是个Modal" :visibleProp="visibleProp" content="" :onClose="modalClose">
+        </ModalConfirm>
+    </div>
+
+    <div class="comp-1">
+        <div class="comp-title" @click="toastShow">Toast</div>
+        <Toast name='to-top' :visibleProp='toastProp' msg="这个是Toast消息" type='regret' :onClose="toastClose" :delayCount=delayCount />
+    </div>
+
+    <div class="comp-1">
+        <div class="comp-title" @click="listShow">ListRow</div>
+        <list-row listLenth=11 rollN=3 :style="{display:listProp}">
+            <div slot="listContent" style="background: #edeff3">
+                <div class="list-item">list信息1</div>
+                <div class="list-item">list信息2</div>
+                <div class="list-item">list信息3</div>
+                <div class="list-item">list信息4</div>
+                <div class="list-item">list信息5</div>
+                <div class="list-item">list信息6</div>
+                <div class="list-item">list信息7</div>
+                <div class="list-item">list信息8</div>
+                <div class="list-item">list信息9</div>
+                <div class="list-item">list信息10</div>
+                <div class="list-item">list信息11</div>
+            </div>
+        </list-row>
+    </div>
+
+</div>
