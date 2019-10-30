@@ -28,3 +28,9 @@
    icon           |string         |自定义icon地址       |——                    | ——
    msg            |string         |提示内容             |——                    | ——
    onClose        |Function       |关闭回调             |——                    | ——
+
+### PullDownRefresh  下拉刷新
+
+```javascript
+  import { PullDownRefresh } from 'vue-mobile-basic-ui'
+  ```
