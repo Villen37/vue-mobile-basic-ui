@@ -1,12 +1,10 @@
-/**
- * Created by zhang on 2018/3/24.
- */
-import withRender from "./index.vtpl";
+import withRender from "./index.vue";
 import './index.less';
+
 import cryImg from './img/cry.png';
-import warningImg from './img/exclamation.png';
-import xImg from './img/x.png';
-import successImg from './img/success.png';
+import warningImg from './img/warning.png';
+import xImg from './img/error.png';
+import successImg from './img/right.png';
 const typeConfig = {
     success: {
         icon: successImg,
@@ -34,19 +32,18 @@ export default withRender({
             type: String,
             default: ''
         },
-        visibleProp: {
-            type: String,
+        propVisible: {
             default: 'none'
         },
         delayCount: {
             type: Number,
-            default: 2000
+            default: 1800
         },
         icon: {
             type: String,
             default: ''
         },
-        msg: {
+        propMsg: {
             type: String,
             default: ''
         },
@@ -61,20 +58,25 @@ export default withRender({
     },
     data() {
         return {
-            visible: this.visibleProp=='block' ? true : false
+            visible: (this.propVisible=='none' || this.propVisible=='') ? false : true,
+            shower:''
         }
     },
     watch: {
-        'visibleProp'(val) {
+        'propVisible'(val) {
             if (val=='none') {
                 this.visible = false;
             }else{
-                this.visible = true;
+                if(!this.visible){
+                    this.visible = true;
+                    this.runTimer();
+                }
+
             }
         },
     },
     mounted(){
-        if (this.visible == 'block') {
+        if (this.visible) {
             this.runTimer();
         }
     },
@@ -92,18 +94,27 @@ export default withRender({
                 clearTimeout(this.$options.staticData.timer);
                 this.$options.staticData.timer = null;
             }
+            let self = this;
+            self.shower='show';
+
             this.$options.staticData.timer = setTimeout(this.close, this.delayCount);
         },
         close() {
-            this.visible = false;
-            this.visibleProp = 'none';
+            let self = this;
             this.onClose();
             this.$options.staticData.timer = null;
-            console.log(this.visible)
+            this.shower='';
+            setTimeout(function () {
+                self.visible = false;
+            },0)
+
         },
         destroyElement() {
             this.$destroy(true);
             this.$el.parentNode.removeChild(this.$el);
         },
+        transitionComplete(){
+            console.log('this is complete')
+        }
     }
 })

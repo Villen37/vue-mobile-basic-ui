@@ -1,112 +1,84 @@
-var path = require('path')
-var webpack = require('webpack')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const url = path.resolve(__dirname, './index.html');
-function resolve (dir) {
-    return path.join(__dirname, '..', dir)
-}
+/**
+ * Created by villen on 2018/10/24.
+ */
+const path = require("path");
+const webpack = require("webpack");
+const uglify = require("uglifyjs-webpack-plugin");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
+
 module.exports = {
-  entry: './src/main.js',
-  output: {
-    path: path.resolve(__dirname, './dist'),
-    // publicPath: '/dist',
-    filename: "bundle.js",
-  },
-  module: {
-    rules: [
-        {
-            test: /\.less$/,
-            use: [
-                { loader: "style-loader" },
-                { loader: "css-loader" },
-                { loader: "postcss-loader" },
-                { loader: "less-loader" }
-            ]
-        },
-        {
-            test: /\.css$/,
-            use: [
-                { loader: "style-loader" },
-                { loader: "css-loader" },
-                { loader: "postcss-loader" }
-            ]
-        },
-        {
-        test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-          }
-          // other vue-loader options go here
-        }
-      },
-        {
-            test: /\.(vtpl)$/,
-            loader: "vue-template-loader",
-            options: {
-                // scoped: true,
-                transformAssetUrls: {
-                    // The key should be an element name
-                    img: 'src'
+    devtool: 'source-map',
+    entry: "./src/index.js",//入口文件，就是上步骤的src目录下的index.js文件，
+    output: {
+        path: path.resolve(__dirname, './lib'),//输出路径，就是上步骤中新建的lib目录，
+        publicPath: '/lib/',
+        filename: 'vueMobialBasicUi.min.js',
+        libraryTarget: 'umd',
+        umdNamedDefine: true
+    },
+    module: {
+        rules: [
+            {
+                test: /\.less$/,
+                use: [
+                    MiniCssExtractPlugin.loader,
+                    "css-loader",
+                    "postcss-loader",
+                    "less-loader"
+                ]
+            },
+            {
+                // enforce: 'post',
+                test: /\.css$/,
+                use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
+            },
+            {
+                test: /\.vue$/,
+                loader: 'vue-loader',
+                options: {
+                    loaders: {
+                    }
+                }
+            },
+            {
+                test: /\.vtpl$/,
+                loader: "vue-template-loader",
+                options: {
+                    // scoped: true,
+                    transformAssetUrls: {
+                        // The key should be an element name
+                        // The value should be an attribute name or an array of attribute names
+                        img: 'src'
+                    }
+                }
+            },
+            {
+                test: /\.js$/,
+                use: "babel-loader",
+                exclude: /node_modules/
+            },
+            {
+                test: /\.(png|jpg|gif|ttf|svg|woff|eot)$/,
+                loader: 'url-loader',
+                query: {
+                    limit: 30000,
+                    name: '[name].[ext]?[hash]'
                 }
             }
-        },
-      {
-        test: /\.js$/,
-        loader: 'babel-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.(png|jpg|gif|svg)$/,
-        loader: 'file-loader',
-        options: {
-          name: '[name].[ext]?[hash]'
-        }
-      }
-    ]
-  },
-    plugins:[
-        new HtmlWebpackPlugin({
-            filename: 'index.html',
-            template: url,
-            inject: true
-        }),
-    ],
-  resolve: {
-    alias: {
-      'vue$': 'vue/dist/vue.esm.js',
-      '@': resolve('src'),
+        ]
     },
-    extensions: ['.js', '.vue', '.json','*']
-  },
-  devServer: {
-    historyApiFallback: true,
-    noInfo: false,
-    overlay: true
-  },
-  performance: {
-    hints: false
-  },
-  devtool: '#eval-source-map'
-}
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports.devtool = '#source-map'
-  // http://vue-loader.vuejs.org/en/workflow/production.html
-  module.exports.plugins = (module.exports.plugins || []).concat([
-    new webpack.DefinePlugin({
-      'process.env': {
-        NODE_ENV: '"production"'
-      }
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: true,
-      compress: {
-        warnings: false
-      }
-    }),
-    new webpack.LoaderOptionsPlugin({
-      minimize: true
-    })
-  ])
-}
+    plugins: [
+        new VueLoaderPlugin(),
+        new MiniCssExtractPlugin({
+            filename: `style/vueMobialBasicUi.min.css`
+        }),
+        new OptimizeCSSAssetsPlugin({}),
+        new webpack.DefinePlugin({
+            "process.env": {
+                NODE_ENV: JSON.stringify("production")
+            }
+        })
+    ]
+};
