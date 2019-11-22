@@ -1,54 +1,60 @@
-.toast-container{
-  z-index: 999;
-  width:0;
-  height:0;
-  position: fixed;
-  top:0;
-  left: 0;
-  overflow: hidden;
-}
-.show.toast-container{
-  width: 100%;
-  height: 100%;
-}
 .ac-toast {
-  max-width: 4rem;
-  border-radius: .05rem;
-  font-size: .16rem;
+  width: 3.6rem;
+  height: 2.4rem;
+  border-radius: .06rem;
+  font-size: .32rem;
   color: #ffffff;
   position: fixed;
   left: 50%;
-  top: 40%;
-  background: rgba(0, 0, 0, 0.6);
-  opacity: 0;
-  transform: translateX(-50%);
-  transition: opacity ease .3s ,top ease .3s;
-  padding: .12rem 0;
-}
-.show.ac-toast{
-  opacity: 1;
-  top: 35%;
-}
-.ac-toast .ac-toast-wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-.ac-toast img {
-  margin-bottom: .12rem;
-  display: block;
-  width: .4rem;
-  height: .4rem;
-}
+  top: 30%;
+  margin-left: -1.8rem;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  .ac-toast-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+  img {
+    margin-bottom: .24rem;
+  }
 
-.ac-toast .ac-msg {
-   padding: 0 .23rem;
-   word-break:break-all;
-   white-space: nowrap;
+  .ac-msg {
+    //height: .4rem;
+    padding: 0 .46rem;
+    //line-height: .4rem;
+    //text-align: justify;
+    word-break:break-all;
+  }
 }
-
-
-
+.ac-success {
+  img {
+    display: block;
+    width: .67rem;
+    height: .46rem;
+  }
+}
+.ac-error {
+  img {
+    display: block;
+    width: .53rem;
+    height: .53rem;
+  }
+}
+.ac-warning {
+  img {
+    display: block;
+    width: .07rem;
+    height: .59rem;
+  }
+}
+.ac-regret {
+  img {
+    display: block;
+    width: .85rem;
+    height: .85rem;
+  }
+}

@@ -10,11 +10,11 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
     devtool: 'source-map',
-    entry: "./src/index.js",//入口文件，就是上步骤的src目录下的index.js文件，
+    entry: "../../src/view/index.js",//入口文件，就是上步骤的src目录下的index.js文件，
     output: {
-        path: path.resolve(__dirname, './lib'),//输出路径，就是上步骤中新建的lib目录，
-        publicPath: '/lib/',
-        filename: 'vueMobileBasicUi.min.js',
+        path: path.resolve(__dirname, './dist'),//输出路径，就是上步骤中新建的lib目录，
+        publicPath: '/dist/',
+        filename: 'vueMobialBasicUi.min.js',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
@@ -35,21 +35,12 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
             },
             {
-                test: /\.vtpl$/,
-                loader: "vue-template-loader",
+                test: /\.vue$/,
+                loader: 'vue-loader',
                 options: {
-                    // scoped: true,
-                    transformAssetUrls: {
-                        // The key should be an element name
-                        // The value should be an attribute name or an array of attribute names
-                        img: 'src'
+                    loaders: {
                     }
                 }
-            },
-            {
-                test: /\.vue$/,
-                exclude: /node_modules/,
-                loader: 'vue-loader'
             },
             {
                 test: /\.js$/,
@@ -67,11 +58,13 @@ module.exports = {
         ]
     },
     plugins: [
-        new MiniCssExtractPlugin({
-            filename: `style/vueMobileBasicUi.min.css`
-        }),
-        new OptimizeCSSAssetsPlugin({}),
         new VueLoaderPlugin(),
+        new MiniCssExtractPlugin(
+            /*{
+                filename: `style/vueMobialBasicUi.min.css`
+            }*/
+        ),
+        new OptimizeCSSAssetsPlugin({}),
         new webpack.DefinePlugin({
             "process.env": {
                 NODE_ENV: JSON.stringify("production")

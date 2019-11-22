@@ -1,0 +1,62 @@
+.ac-roll-container{
+  position: absolute;
+  overflow: hidden;
+  height: .23rem;
+  line-height: .23rem;
+  top:.05rem;
+  width:auto;
+  font-size: .17rem;
+  color: #fff;
+  align-items: center;
+  flex-wrap: nowrap;
+  position: relative;
+  display: inline-block;
+  position: relative;
+  padding-left: .05rem;
+  margin-right: -0.08rem;
+}
+.num-bg{
+    width: .17rem;
+    height: 100%;
+    position: absolute;
+    left:0.03rem;
+    border-radius: 4px;
+}
+.static-icon{
+  height: .2rem;
+  margin: .02rem .06rem .02rem .02rem;
+}
+.ac-roll-body{
+    margin-left: .02rem;
+
+}
+.ac-roll-body>div{
+  opacity: 0;
+}
+.ac-roll-body.animate{
+    transform: translateY(50%);
+   animation: showCoin ease 1s forwards;
+}
+.ac-roll-body.animate>div{
+  opacity: 1;
+  font-size: .15rem!important;
+  letter-spacing: .12rem;
+  font-weight: 600;
+}
+
+@-webkit-keyframes myfirst { /* Safari 与 Chrome */
+   from {background: red;}
+   to {background: yellow;}
+ }
+
+@-webkit-keyframes showCoin {
+ 0%{
+   transform: translateY(50%);
+ }
+ 80%{
+   transform: translateY(-20%);
+ }
+ 100%{
+   transform: translateY(0);
+ }
+}

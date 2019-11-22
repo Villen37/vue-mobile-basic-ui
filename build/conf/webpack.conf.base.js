@@ -14,7 +14,7 @@ module.exports = {
     output: {
         path: path.resolve(__dirname, './lib'),//输出路径，就是上步骤中新建的lib目录，
         publicPath: '/lib/',
-        filename: 'vueMobileBasicUi.min.js',
+        filename: 'vueMobialBasicUi.min.js',
         libraryTarget: 'umd',
         umdNamedDefine: true
     },
@@ -35,6 +35,14 @@ module.exports = {
                 use: [MiniCssExtractPlugin.loader, "css-loader", "postcss-loader"]
             },
             {
+                test: /\.vue$/,
+                loader: 'vue-loader',
+                options: {
+                    loaders: {
+                    }
+                }
+            },
+            {
                 test: /\.vtpl$/,
                 loader: "vue-template-loader",
                 options: {
@@ -45,11 +53,6 @@ module.exports = {
                         img: 'src'
                     }
                 }
-            },
-            {
-                test: /\.vue$/,
-                exclude: /node_modules/,
-                loader: 'vue-loader'
             },
             {
                 test: /\.js$/,
@@ -67,11 +70,11 @@ module.exports = {
         ]
     },
     plugins: [
+        new VueLoaderPlugin(),
         new MiniCssExtractPlugin({
-            filename: `style/vueMobileBasicUi.min.css`
+            filename: `style/vueMobialBasicUi.min.css`
         }),
         new OptimizeCSSAssetsPlugin({}),
-        new VueLoaderPlugin(),
         new webpack.DefinePlugin({
             "process.env": {
                 NODE_ENV: JSON.stringify("production")

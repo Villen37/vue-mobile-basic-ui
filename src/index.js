@@ -1,13 +1,12 @@
 /**
  * Created by villen on 2018/10/24.
  */
-import Toast from './packages/toast/index.js';
-import PullDownRefresh from './packages/pull-down-refresh/index.js';
-
+import toast from './packages/toast/toast.js';
+import vbRollStop from './packages/roll-stop/index.vue';
 
 const components = {
-    Toast,
-    PullDownRefresh
+    toast,
+    vbRollStop
 };
 
 const install = function (Vue, opts = {}) {
@@ -17,8 +16,7 @@ const install = function (Vue, opts = {}) {
         const component = components[key];
         Vue.component(component.name, component);
     }
-    //Vue.prototype.$modalBox = modalBox;
-    Vue.prototype.$toast = Toast;
+    Vue.prototype.$toast = toast;
 };
 
 module.exports = {

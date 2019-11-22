@@ -1,10 +1,12 @@
-import withRender from "./index.vue";
+/**
+ * Created by villen on 2019/3/24.
+ */
+import withRender from "./index.vtpl";
 import './index.less';
-
 import cryImg from './img/cry.png';
-import warningImg from './img/warning.png';
-import xImg from './img/error.png';
-import successImg from './img/right.png';
+import warningImg from './img/exclamation.png';
+import xImg from './img/x.png';
+import successImg from './img/success.png';
 const typeConfig = {
     success: {
         icon: successImg,
@@ -24,26 +26,23 @@ const typeConfig = {
 export default withRender({
     name: 'Toast',
     props: {
-        name: {
-            type: String,
-            default: 'fade'
-        },
         type: {
             type: String,
             default: ''
         },
-        propVisible: {
+        visibleProp: {
+            type: String,
             default: 'none'
         },
         delayCount: {
             type: Number,
-            default: 1800
+            default: 2000
         },
         icon: {
             type: String,
             default: ''
         },
-        propMsg: {
+        msg: {
             type: String,
             default: ''
         },
@@ -58,25 +57,21 @@ export default withRender({
     },
     data() {
         return {
-            visible: (this.propVisible=='none' || this.propVisible=='') ? false : true,
-            shower:''
+            visible: this.visibleProp,
         }
     },
     watch: {
-        'propVisible'(val) {
-            if (val=='none') {
-                this.visible = false;
-            }else{
-                if(!this.visible){
-                    this.visible = true;
+        'visibleProp'(val) {
+            if (this.visible !== val) {
+                this.visible = val;
+                if (val == 'block') {
                     this.runTimer();
                 }
-
             }
         },
     },
     mounted(){
-        if (this.visible) {
+        if (this.visible == 'block') {
             this.runTimer();
         }
     },
@@ -94,27 +89,16 @@ export default withRender({
                 clearTimeout(this.$options.staticData.timer);
                 this.$options.staticData.timer = null;
             }
-            let self = this;
-            self.shower='show';
-
             this.$options.staticData.timer = setTimeout(this.close, this.delayCount);
         },
         close() {
-            let self = this;
+            this.visible = 'none';
             this.onClose();
             this.$options.staticData.timer = null;
-            this.shower='';
-            setTimeout(function () {
-                self.visible = false;
-            },0)
-
         },
         destroyElement() {
             this.$destroy(true);
             this.$el.parentNode.removeChild(this.$el);
         },
-        transitionComplete(){
-            console.log('this is complete')
-        }
     }
 })
