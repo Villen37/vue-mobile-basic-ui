@@ -4,10 +4,7 @@ export default {
     name: 'vbRollStop',
     props: {
         propCoinNum:{
-            default: '0'
-        },
-        propStyle:{
-            default:''
+            default: ''
         },
         propIcon:{
             type: String,
@@ -17,17 +14,18 @@ export default {
     data(){
         return {
             'classAnimate':'',
-            'defaultArr':["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""]
+            'defaultArr':["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
+            'appendDom':'<div>76</div>'
         }
     },
     watch:{
         propCoinNum:function (v1,v2) {
             if(v1!=v2){
-                let self = this;
                 this.classAnimate='';
+                this.setDom(v1)
                 setTimeout(()=>{
-                    self.classAnimate = 'animate';
-                },0)
+                    this.classAnimate = 'animate';
+                },10)
             }
         }
 
@@ -37,6 +35,7 @@ export default {
     },
     mounted() {
         //document.querySelector(".ac-roll-container")​
+        this.setDom(this.propCoinNum);
         this.listRolling();
     },
     methods: {
@@ -45,7 +44,20 @@ export default {
          * */
         listRolling(){
             this.classAnimate='animate'
+        },
+        setDom(value){
+            if(value=='' || value==0){
+                return '';
+            }
+            let str = typeof(value)=='number' ? value.toString()+'' : value;
+            let arr = str.split('')
+            let dom ='';
+            arr.forEach((item)=>{
+                dom += '<div class="num-bg">'+item+'</div>'
+            })
+            this.appendDom = dom;
         }
+
     },
     beforeDestroy() {
         window.clearInterval(this.timer);

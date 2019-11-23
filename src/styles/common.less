@@ -1,0 +1,123 @@
+
+.hidden{
+	display: none!important;
+}
+.img-bg{
+	background-repeat:no-repeat;
+	background-position:left top;
+	background-size:cover;
+}
+/* 截行风格 */
+.line-clamp-1{text-overflow: ellipsis;  display: -webkit-box!important; -webkit-line-clamp: 1; -webkit-box-orient: vertical;overflow: hidden}
+.line-clamp-2{text-overflow: ellipsis;  display: -webkit-box!important; -webkit-line-clamp: 2; -webkit-box-orient: vertical;overflow: hidden}
+.line-clamp-3{text-overflow: ellipsis;  display: -webkit-box!important; -webkit-line-clamp: 3; -webkit-box-orient: vertical;overflow: hidden}
+.line-clamp-6{text-overflow: ellipsis;  display: -webkit-box!important; -webkit-line-clamp:6; -webkit-box-orient: vertical;overflow: hidden}
+
+.flex{
+	display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
+	display: -moz-box; /* Firefox 17- */
+	display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+	display: -moz-flex; /* Firefox 18+ */
+	display: -ms-flexbox; /* IE 10 */
+	display: flex; /* Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+ */
+	flex-direction:row;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-start;
+}
+.gray{
+	-webkit-filter: grayscale(100%);
+	-moz-filter: grayscale(100%);
+	-ms-filter: grayscale(100%);
+	-o-filter: grayscale(100%);
+	filter: grayscale(100%);
+	filter: gray;
+}
+/*上下分布*/
+.flex-column{
+@extend .flex;
+	flex-direction: column;
+}
+/* flex 左右均匀分布 */
+.flex-blance{
+@extend .flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: flex-start;
+	align-items: center;
+	text-align: center;
+	justify-content: space-evenly;
+	flex-direction:row;
+}
+.clear-after::after{
+	display: block;
+	content: '';
+	width: 0;
+	height: 0;
+	clear: both
+}
+
+.show.from-top,
+.show.from-bottom{
+	opacity: 1;
+	transform: translateY(0);
+}
+.show.from-opacity{
+	opacity: 1;
+	transform: scale(1);
+}
+/*从下面部显示*/
+.from-bottom,
+.from-bottom.hide{
+	opacity: 0;
+	transform: translateY(0.3rem);
+	transition: all .3s ease;
+}
+/*从上面显示*/
+.from-top,
+.from-top.hide{
+	opacity: 0;
+	transform: translateY(-0.12rem);
+	transition: all .2s ease;
+}
+/*从透明到显示*/
+.from-opacity,
+.from-opacity.hide{
+	opacity: 0;
+	transform: scale(.2);
+	transition: all .2s ease;
+}
+
+/*心跳*/
+.css-heard{
+	animation: heartBeat 1.5s infinite linear;
+}
+@keyframes heartBeat {
+	0% {
+		transform: scale(1)
+	}
+	14% {
+		transform: scale(1.07)
+	}
+	28% {
+		transform: scale(1)
+	}
+	42% {
+		transform: scale(1.07)
+	}
+	70% {
+		transform: scale(1)
+	}
+}
+/*转圈圈*/
+.css-rolling{
+	animation: rolling 1.5s infinite linear;
+}
+@keyframes rolling{
+	0% {
+		transform: rotate(0deg)
+	}
+	100% {
+		transform: rotate(360deg)
+	}
+}

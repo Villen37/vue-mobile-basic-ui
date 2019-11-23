@@ -3,8 +3,10 @@
  */
 
 
-// toast 提示
+// scroll-stop 提示
 import vbRollStop from '../../packages/roll-stop/index.vue';
+// cover-img 蒙层loading
+import vbCoverLoading from '../../packages/cover-loading/index.vue';
 
 export default {
     name: "app",
@@ -15,7 +17,8 @@ export default {
         }
     },
     components: {
-        vbRollStop
+        vbRollStop,
+        vbCoverLoading
     },
     watch:{
 
@@ -23,11 +26,8 @@ export default {
     },
     mounted(){
 
-
-
     },
     created() {
-
     },
     methods: {
 

@@ -3,11 +3,14 @@
  */
 const Wds = require("webpack-dev-server");
 const webpack = require("webpack");
-const getWebpackConfig = require("./conf/webpack.config.dev");
+const getWebpackConfig = require("./build/conf/webpack.conf.dev");
 const path = require("path");
 
 let entries = process.argv.slice(2);
 if (!entries.length) entries = null;
+
+console.log('======')
+console.log(entries)
 
 const devConfig = getWebpackConfig(entries);
 const options = {

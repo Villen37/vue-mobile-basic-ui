@@ -13,22 +13,25 @@
   display: inline-block;
   position: relative;
   padding-left: .05rem;
-  margin-right: -0.08rem;
+  align-items:flex-start!important;
+}
+.roll-body{
+  position: relative;
+}
+.roll-img{
+  height: .2rem;
+  width: .2rem;
+  border-radius: 100%;
+  margin-right: .05rem;
 }
 .num-bg{
-    width: .17rem;
     height: 100%;
-    position: absolute;
-    left:0.03rem;
-    border-radius: 4px;
+    display: inline-block;
+  text-align: center;
 }
 .static-icon{
   height: .2rem;
   margin: .02rem .06rem .02rem .02rem;
-}
-.ac-roll-body{
-    margin-left: .02rem;
-
 }
 .ac-roll-body>div{
   opacity: 0;
@@ -39,8 +42,8 @@
 }
 .ac-roll-body.animate>div{
   opacity: 1;
-  font-size: .15rem!important;
-  letter-spacing: .12rem;
+  font-size: .15rem;
+  letter-spacing: .02rem;
   font-weight: 600;
 }
 
