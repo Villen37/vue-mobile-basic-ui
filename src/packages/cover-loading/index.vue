@@ -14,9 +14,8 @@
         <img v-else src="../../imgs/break.png">
         <div>暂无数据<div v-if="visibleReload!='no'" @click="reload" class="cover-reload">刷新重试</div></div>
     </div>
-
 </div>
 </template>
 
-<style slot-scope src="./index.less"></style>
+<style scoped src="./index.less"></style>
 <script src="./index.js"></script>

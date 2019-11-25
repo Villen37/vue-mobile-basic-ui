@@ -15,6 +15,14 @@
 
             <div class="title">下拉刷新</div>
             <div class="tip">(请直接进行下拉操作)</div>
+
+            <div class="title">数据滚动</div>
+            <div class="comp-roll-list">
+                <vb-roll-list :propData="dataRoll" ></vb-roll-list>
+            </div>
+
+
+
         </vb-pulldown-refresh>
 
 

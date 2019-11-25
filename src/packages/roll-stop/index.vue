@@ -1,7 +1,5 @@
 <template>
 <div :class="['ac-roll-container flex']">
-
-
     <div v-if="propIcon">
         <img class="roll-img" :src="propIcon">
     </div>
@@ -14,5 +12,5 @@
 </div>
 </template>
 
-<style slot-scope src="./index.less"></style>
+<style scoped src="./index.less"></style>
 <script src="./index.js"></script>

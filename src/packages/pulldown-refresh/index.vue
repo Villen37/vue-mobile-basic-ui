@@ -17,5 +17,5 @@
     </div>
 </template>
 
-<style slot-scope src="./index.less"></style>
+<style scoped src="./index.less"></style>
 <script src="./index.js"></script>

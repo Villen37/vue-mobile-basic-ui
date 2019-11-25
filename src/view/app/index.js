@@ -9,19 +9,25 @@ import vbRollStop from '../../packages/roll-stop/index.vue';
 import vbCoverLoading from '../../packages/cover-loading/index.vue';
 // pulldown-refresh 蒙层loading
 import vbPulldownRefresh from '../../packages/pulldown-refresh/index.vue';
+// roll-list 滚动数据
+import vbRollList from '../../packages/roll-list/index.vue';
+
+
 export default {
     name: "app",
     data() {
         return {
             aniLoading:false,
             aniPullDown:'',
+            dataRoll:['list信息1','list信息2','list信息3','list信息4','list信息5','list信息6','list信息7'],
             last:0
         }
     },
     components: {
         vbRollStop,
         vbCoverLoading,
-        vbPulldownRefresh
+        vbPulldownRefresh,
+        vbRollList
     },
     watch:{
 

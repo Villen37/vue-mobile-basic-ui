@@ -44,11 +44,16 @@
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: flex-start;
-	align-items: center;
 	text-align: center;
 	justify-content: space-evenly;
 	flex-direction:row;
 }
+/*flex 剧中分布*/
+.flex-center{
+    .flex;
+	justify-content: center;
+}
+/*浮动清除*/
 .clear-after::after{
 	display: block;
 	content: '';
@@ -56,12 +61,6 @@
 	height: 0;
 	clear: both
 }
-/*flex 剧中分布*/
-.flex-center{
-    .flex;
-	justify-content: center;
-}
-
 .show.from-top,
 .show.from-bottom{
 	opacity: 1;

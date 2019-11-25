@@ -72,5 +72,17 @@ propKey2       |string      |展示文案        |加载中                | —
 
 touchEnd的回调 @listeningEmit="自己的方法"，也可以通过执行回调里的option.fun，来结束下拉动画
 
+### vbRollList  下拉刷新，整个页面上的使用
+
+```javascript
+import { vbRollList } from 'vue-mobile-basic-ui'
+```
+参数           |类型           |说明                 |默认值                  |可选值
+---------------|------------|---------------|--------------------|----------------------------
+propData       |array       |滚动的list      |-                   | 
+propIcon       |string      |设置图标         |               | ——
+
+支持slot
+
 
 

@@ -1,0 +1,48 @@
+.roll-list-container{
+  position: relative;
+  overflow: hidden;
+  height: .25rem;
+  line-height: .25rem;
+  width:100%;
+  font-size: .14rem;
+  color: #fff;
+  left: 0;
+  top:0;
+  align-items: flex-start;
+  text-align: left;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#000000+81,000000+100&0.7+1,0.5+71,0.01+100,0+100 */
+  background: -moz-linear-gradient(left, rgba(0,0,0,0.7) 1%, rgba(0,0,0,0.5) 71%, rgba(0,0,0,0.33) 81%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(left, rgba(0,0,0,0.7) 1%,rgba(0,0,0,0.5) 71%,rgba(0,0,0,0.33) 81%,rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to right, rgba(0,0,0,0.7) 1%,rgba(0,0,0,0.5) 71%,rgba(0,0,0,0.33) 81%,rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#b3000000', endColorstr='#00000000',GradientType=1 ); /* IE6-9 */
+  &.has-icon{
+    padding-left: .27rem;
+    img{
+      position: absolute;
+      left: 0;
+      width: .22rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+  }
+}
+.roll-list-body{
+  padding-top: 0;
+  padding-bottom: 0;
+}
+.list-item{
+  height: .25rem;
+}
+.roll-list-container.has-icon .roll-list-body{
+  width:calc(100% - 0.3rem);
+}
+
+.static-icon{
+  height: .14rem;
+  margin:.05rem .05rem 0 0.06rem;
+  display: block;
+}
+
+.roll-list-body.animate{
+  transition: all ease .5s;
+}
