@@ -1,17 +1,20 @@
 <template>
     <div class="main-view">
-        <vb-pulldown-refresh>
-        数字滚动展示
-        <div>
-            <div class="comp-roll">
-                <vb-roll-stop :propCoinNum="2333" propIcon=""></vb-roll-stop>
+        <vb-pulldown-refresh @listeningEmit="pulldownEnd" :propState="aniPullDown">
+            <div class="title">数字滚动展示</div>
+            <div>
+                <div class="comp-roll">
+                    <vb-roll-stop :propCoinNum="2333" propIcon=""></vb-roll-stop>
+                </div>
             </div>
-        </div>
 
-        蒙层loading
-        <vb-cover-loading :propShow="false"></vb-cover-loading>
+            <div class="title">蒙层loading</div>
+            <div class="tip" @click="showLoading">点击展示</div>
+            <vb-cover-loading :propShow="aniLoading"></vb-cover-loading>
 
-        下拉刷新
+
+            <div class="title">下拉刷新</div>
+            <div class="tip">(请直接进行下拉操作)</div>
         </vb-pulldown-refresh>
 
 

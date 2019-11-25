@@ -13,7 +13,8 @@ export default {
     name: "app",
     data() {
         return {
-
+            aniLoading:false,
+            aniPullDown:'',
             last:0
         }
     },
@@ -32,6 +33,18 @@ export default {
     created() {
     },
     methods: {
-
+        showLoading:function () {
+            this.aniLoading=true;
+            setTimeout(()=>{
+                this.aniLoading=false;
+            },2000)
+        },
+        pulldownEnd:function (option) {
+            setTimeout(()=>{
+                this.aniPullDown=0
+                /*let fun = option.fun;
+                fun();*/
+            },2000)
+        }
     }
 }

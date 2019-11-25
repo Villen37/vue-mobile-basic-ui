@@ -65,11 +65,12 @@ import { vbPulldwonRefresh } from 'vue-mobile-basic-ui'
 ```
 参数           |类型           |说明                 |默认值                  |可选值
 ---------------|------------|---------------|--------------------|----------------------------
-propState      |string      |是否生效        |no                   | ——
+propState      |string      |是否生效        |-                   | no,禁用 0，恢复隐藏
 propKey0       |string      |展示文案        |下拉即可刷新           | ——
 propKey1       |string      |展示文案        |释放即可刷新           | ——
 propKey2       |string      |展示文案        |加载中                | ——
 
+touchEnd的回调 @listeningEmit="自己的方法"，也可以通过执行回调里的option.fun，来结束下拉动画
 
 
 

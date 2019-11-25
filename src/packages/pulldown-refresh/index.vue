@@ -5,9 +5,10 @@
             @touchend="touchEnd"
     >
         <div class="vb-pull-refreshing-box">
-            <div v-if="moveState < 2">
-                {{ moveState === 0 ? propKey0 : propKey1 }}
-            </div>
+            <div v-if="moveState==0">{{propKey0}}</div>
+            <div v-else-if="moveState==1">{{propKey1}}</div>
+            <div v-else-if="moveState==-1">{{propKey3}}</div>
+
             <div class="flex-center" v-else><i class="vb-loading css-circling" /> {{propKey2}}</div>
         </div>
         <div class="vb-pull-present-box">

@@ -45,7 +45,7 @@ export default {
     },
     watch:{
         propShow(val) {
-            if (val=='none') {
+            if (val=='none' || val==false) {
                 this.visible = false;
             }else{
                 if(!this.visible){

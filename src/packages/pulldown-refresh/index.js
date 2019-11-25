@@ -11,7 +11,6 @@ export default {
     },
     props: {
         propState: {
-            type: String,
             default: ''
         },
         propKey0: {
@@ -25,12 +24,16 @@ export default {
         propKey2: {
             type: String,
             default: '加载中...'
+        },
+        propKey3: {
+            type: String,
+            default: '刷新成功!'
         }
     },
     computed: {
         style() {
             let fontSize = document.getElementsByTagName('html')[0].style.getPropertyValue("font-size").split('px')[0];
-            console.log(fontSize)
+            //console.log(fontSize)
             return {
                 transition: `${this.duration}ms`,
                 transform: `translate3d(0,${this.moveDistance/fontSize}rem, 0)`
@@ -90,12 +93,18 @@ export default {
                  this.moveState = 0;
                  });*/
                 this.$emit('listeningEmit', {from:'refresh', fun:() => {
-                    this.moveState = 0;
+                    this.finish();
                 }})
             } else {
                 //否则 给我老老实实恢复原样
                 this.moveDistance = 0;
             }
+        },
+        finish(){
+            this.moveState = -1;
+            setTimeout(()=>{
+                this.moveState = 0;
+            },500)
         }
     },
     watch: {
@@ -105,8 +114,14 @@ export default {
             //0意味着开始也意味着结束，这里是结束，并且只有动画生效我们才能 moveDistance 设为0，
             //为什么动画生效才行，因为动画生效意味着手指离开了屏幕，如果不懂去看touchEnd方法，这时
             //我们让距离变为0才会有动画效果。
-            if (state === 0 && this.duration === 300) {
+            if (state <1 && this.duration === 300) {
                 this.moveDistance = 0;
+            }
+        },
+        //恢复设置
+        propState(s){
+            if(s=='0'){
+                this.finish();
             }
         }
     }
