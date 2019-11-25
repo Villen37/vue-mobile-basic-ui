@@ -1,0 +1,21 @@
+.vb-pull-refresh {
+  display: flex;
+  /*height: calc(100vh - .5rem);*/
+  flex-direction: column;
+  margin-top: -.5rem;
+
+  .vb-pull-refreshing-box {
+    line-height: .5rem;
+    height: .5rem;
+    font-size: .14rem;
+    color: #000;
+    text-align: center;
+    .vb-loading{
+      height: .18rem;
+      width: .18rem;
+      background: url("../../imgs/loading.png") center center / contain no-repeat;
+      display: inline-block;
+      margin-right: .05rem;
+    }
+  }
+}

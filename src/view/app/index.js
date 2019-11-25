@@ -7,7 +7,8 @@
 import vbRollStop from '../../packages/roll-stop/index.vue';
 // cover-img 蒙层loading
 import vbCoverLoading from '../../packages/cover-loading/index.vue';
-
+// pulldown-refresh 蒙层loading
+import vbPulldownRefresh from '../../packages/pulldown-refresh/index.vue';
 export default {
     name: "app",
     data() {
@@ -18,7 +19,8 @@ export default {
     },
     components: {
         vbRollStop,
-        vbCoverLoading
+        vbCoverLoading,
+        vbPulldownRefresh
     },
     watch:{
 

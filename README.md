@@ -57,3 +57,19 @@ propCoinNum    |number      |要显示的数字     |0                  |
 propIcon       |string      |左侧可以显示图片  |——                    | ——
 
 propIcon为空的时候可以自定义slot。使用时，最好外面包一层容器
+
+### vbPulldwonRefresh  下拉刷新，整个页面上的使用
+
+```javascript
+import { vbPulldwonRefresh } from 'vue-mobile-basic-ui'
+```
+参数           |类型           |说明                 |默认值                  |可选值
+---------------|------------|---------------|--------------------|----------------------------
+propState      |string      |是否生效        |no                   | ——
+propKey0       |string      |展示文案        |下拉即可刷新           | ——
+propKey1       |string      |展示文案        |释放即可刷新           | ——
+propKey2       |string      |展示文案        |加载中                | ——
+
+
+
+

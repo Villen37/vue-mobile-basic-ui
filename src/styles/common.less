@@ -40,7 +40,7 @@
 }
 /* flex 左右均匀分布 */
 .flex-blance{
-@extend .flex;
+    .flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: flex-start;
@@ -55,6 +55,11 @@
 	width: 0;
 	height: 0;
 	clear: both
+}
+/*flex 剧中分布*/
+.flex-center{
+    .flex;
+	justify-content: center;
 }
 
 .show.from-top,
@@ -110,10 +115,10 @@
 	}
 }
 /*转圈圈*/
-.css-rolling{
-	animation: rolling 1.5s infinite linear;
+.css-circling{
+	animation: circling 1.5s infinite linear;
 }
-@keyframes rolling{
+@keyframes circling{
 	0% {
 		transform: rotate(0deg)
 	}
