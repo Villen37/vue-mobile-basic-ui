@@ -1,14 +1,17 @@
 /**
  * Created by villen on 2018/10/24.
  */
-import toast from './packages/toast/toast.js';
 import vbRollStop from './packages/roll-stop/index.vue';
 import vbPulldownRefresh from './packages/pulldown-refresh/index.vue';
+import vbRollList from './packages/roll-list/index.vue';
+import vbCoverLoading from './packages/cover-loading/index.vue';
+import vbToast from './packages/toast/toast.js';
 
 const components = {
-    toast,
     vbRollStop,
-    vbPulldownRefresh
+    vbPulldownRefresh,
+    vbRollList,
+    vbCoverLoading,
 };
 
 const install = function (Vue, opts = {}) {
@@ -18,10 +21,11 @@ const install = function (Vue, opts = {}) {
         const component = components[key];
         Vue.component(component.name, component);
     }
-    Vue.prototype.$toast = toast;
+    Vue.prototype.$vbToast = vbToast;
 };
 
 module.exports = {
     ...components,
     install,
+    vbToast
 }

@@ -21,14 +21,15 @@ html的"font-size:100px"下，UI正常使用
 // 如果组件库全局注册
 this.$toast(Object options)
 // 若没有
-import { toast } from 'vue-mobile-basic-ui'
+import { vbToast } from 'vue-mobile-basic-ui'
 ```
-参数            |类型           |说明                 |默认值                  |可选值
----------------|---------------|---------------------|------------------------|----------------------------
-type           |string         |提示类型             |——                    |success/error/warning/regret
-delayCount     |int            |显示多久(ms)         |2000                    | ——
-icon           |string         |自定义icon地址       |——                    | ——
-msg            |string         |提示内容             |——                    | ——
+参数            |类型           |说明                 |默认值      |可选值
+---------------|---------------|---------------------|----------|----------------------------
+propName       |string         |transition           |fade      |
+propVisible    |string         |显示与否              |none      | 只要值不同即可，这里可用时间戳
+propDelay      |number         |延迟时间              |1800      | ——
+propIcon       |string         |icon                 |——                    | ——
+propMsg        |string         |提示内容             |——                    | ——
 onClose        |Function       |关闭回调             |——                    | ——
 
 ### vbCoverLoading  加载loading，页面覆盖

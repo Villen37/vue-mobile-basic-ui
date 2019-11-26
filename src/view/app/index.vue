@@ -21,6 +21,12 @@
                 <vb-roll-list :propData="dataRoll" ></vb-roll-list>
             </div>
 
+            <div class="title">Toast</div>
+            <div class="tip" @click="showToast">点击弹出</div>
+            <div class="tip" @click="showToastJs">点击弹出2</div>
+            <div class="comp-roll-list">
+                <vb-toast :propVisible="toastPorp.visible" :propMsg="toastPorp.msg"></vb-toast>
+            </div>
 
 
         </vb-pulldown-refresh>

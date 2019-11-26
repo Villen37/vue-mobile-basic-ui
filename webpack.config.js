@@ -10,6 +10,11 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
 module.exports = {
     devtool: 'source-map',
+    resolve: {
+        alias: { // 别名
+            '@src': path.resolve(__dirname, '../src')
+        }
+    },
     entry: "./src/index.js",//入口文件，就是上步骤的src目录下的index.js文件，
     output: {
         path: path.resolve(__dirname, './lib'),//输出路径，就是上步骤中新建的lib目录，

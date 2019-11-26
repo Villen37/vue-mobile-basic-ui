@@ -6,7 +6,8 @@ const ToastConstructor = Vue.extend(toastOptions);
 let instance;
 let nId=1;
 
-export default function vbToast(options) {
+export default function Vbtoast(options) {
+    console.log(options)
   if (instance) {
     instance.vm.destroyElement();
   }
@@ -14,16 +15,13 @@ export default function vbToast(options) {
     propsData: {
       ...options,
       visibleProp: 'block',
-      onType: 'js',
     }
   });
   const closeFun = instance.close;
   instance.close = function () {
     closeFun();
-    setTimeout(()=>{
-        instance.destroyElement();
-        instance = null;
-    },300)
+    instance.destroyElement();
+    instance = null;
   };
   if (isVNode(instance.msg)) {
     instance.$slots.default = [instance.content];
@@ -32,14 +30,7 @@ export default function vbToast(options) {
     delete instance.$slots.default;
   }
   instance.vm = instance.$mount();
-  let dom = instance.vm.$el
-  document.body.appendChild(dom);
-  dom.style.zIndex = nId + 100;
-  dom.classList.add('js-toast');
-  setTimeout(()=>{
-      dom.classList.add('js-toast-show');
-  },20)
-
+  document.body.appendChild(instance.vm.$el);
 
   //instance.vm.visible = 'block';
 }

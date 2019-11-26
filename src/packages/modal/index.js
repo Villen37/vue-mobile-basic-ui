@@ -8,44 +8,45 @@ import xImg from '../../imgs/x.png';
 import successImg from '../../imgs/success.png';
 const typeConfig = {
     success: {
-        propIcon: successImg,
+        icon: successImg,
         cls: 'success',
     }, error: {
-        propIcon: xImg,
+        icon: xImg,
         cls: 'error',
     }, warning: {
-        propIcon: warningImg,
+        icon: warningImg,
         cls: 'warning',
     }, regret: {
-        propIcon: cryImg,
+        icon: cryImg,
         cls: 'regret',
     },
 };
 
 export default {
-    name: 'vbToast',
+    name: 'vbtoast',
     props: {
-        propName: {
+        name: {
             type: String,
             default: 'fade'
+        },
+        type: {
+            type: String,
+            default: ''
         },
         propVisible: {
             default: 'none'
         },
-        propDelay: {
+        delayCount: {
             type: Number,
             default: 1800
         },
-        propIcon: {
+        icon: {
             type: String,
             default: ''
         },
         propMsg: {
             type: String,
             default: ''
-        },
-        onType:{
-            default:'dom' //如果是js，说明是被js直接拉起的
         },
         onClose: {
             type: Function,
@@ -97,7 +98,7 @@ export default {
             let self = this;
             self.shower='show';
 
-            this.$options.staticData.timer = setTimeout(this.close, this.propDelay);
+            this.$options.staticData.timer = setTimeout(this.close, this.delayCount);
         },
         close() {
             let self = this;
