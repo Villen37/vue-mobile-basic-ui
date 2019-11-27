@@ -42,8 +42,8 @@ import { vbCoverLoading } from 'vue-mobile-basic-ui'
 propShow       |boolean     |true           |true                  |true/false
 onClose        |Function    |关闭回调        |——                    | ——
 propDefault    |boolean     |true           |如果false，就自己写内部图文，以下不生效| ——
-propImgLoading |string      |loading图      |—— 本地图              | ——
-propImgBreak   |string      |破裂图          |—— 本地图              | ——
+propImgLoading |string      |loading图      |本地图              | ——
+propImgBreak   |string      |破裂图          |本地图              | ——
 onReload       |Function    |点击重试        |——                    | ——
 
 
