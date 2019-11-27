@@ -68,23 +68,30 @@ export default {
         showCancelBtn: {
             type: Boolean,
             default: true
-        },
+        }
     },
     data() {
         return {
             visible: this.propVisible,
+            showContentClass:''
         }
+    },
+    mounted(){
     },
     watch: {
         'propVisible'(val) {
             if (this.visible !== val) {
                 this.visible = true;
+                setTimeout(()=>{
+                    this.showContentClass='show'
+                },10)
             }
         }
     },
     methods: {
         close() {
             this.visible = false;
+            this.showContentClass='';
             this.onClose();
         },
         cancel() {

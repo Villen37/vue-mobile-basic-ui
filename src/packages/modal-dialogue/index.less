@@ -29,7 +29,13 @@
   top: 30%;
   text-align: center;
   background: #ffffff;
-  //z-index: 999;
+  opacity: 0;
+  transform: scale(.5);
+  transition: all .3s ease .1s;
+}
+.show .ac-modal-container{
+  opacity: 1;
+  transform: scale(1);
 }
 
 .ac-modal-cancel-icon {

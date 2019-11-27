@@ -47,7 +47,13 @@ export default function modal(options) {
         };
         handleSlot();
         instance.vm = instance.$mount();
-        document.body.appendChild(instance.vm.$el);
+        let dom = instance.vm.$el
+        document.body.appendChild(dom);
+        dom.style.zIndex = 1000;
+        setTimeout(()=>{
+            dom.classList.add('show');
+        },20)
+
     } else {
         Object.assign(instance, options);
         handleSlot();

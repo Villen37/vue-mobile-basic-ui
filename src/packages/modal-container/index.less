@@ -5,7 +5,7 @@
   height: 0;
   overflow: hidden;
   position: fixed;
-  background: rgba(0,0,0,.5);
+  background: rgba(0,0,0,.8);
   left: 0;
   top: 0;
   justify-content: center;
@@ -17,7 +17,8 @@
   opacity: 0;
   .vb-modal-body{
     opacity: 0;
-    transition: opacity .3s ease .2s;
+    transform: scale(.5);
+    transition: all .2s ease .1s;
   }
   &.show{
     width: 100%;
@@ -25,6 +26,7 @@
     opacity: 1;
     .vb-modal-body{
       opacity: 1;
+      transform: scale(1);
     }
   }
 
