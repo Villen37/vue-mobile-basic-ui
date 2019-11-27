@@ -74,7 +74,7 @@ export default {
         },
         showToastJs:function () {
             this.$vbToast({
-                propMsg:new Date(),
+                propMsg:'time:'+new Date().getTime(),
                 propVisible:new Date(),
                 propDelay:2000
             })
