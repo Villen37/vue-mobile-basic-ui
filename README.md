@@ -3,6 +3,7 @@
 ### 测试阶段。。。
 
 html的"font-size:100px"下，UI正常使用
+使用：npm install vue-mobile-basic-ui
 
 ## 基本用法
 
@@ -100,6 +101,9 @@ slot自己把内容丢进去
 ### vbModalDialogue  modal的黑色半透明背景的容器
 
 ```javascript
+// 如果组件库全局注册
+this.$vbModal(Object options)
+//或者
 import { vbModalDialogue } from 'vue-mobile-basic-ui'
 ```
 | 参数           |类型              |说明                   |默认值                      |可选值

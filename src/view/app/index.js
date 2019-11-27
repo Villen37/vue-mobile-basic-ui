@@ -22,7 +22,7 @@ import toast from '../../packages/toast/toast';
 import modal from '../../packages/modal-dialogue/modal';
 const install = function (Vue, opts = {}) {
     Vue.prototype.$vbToast = toast;
-    Vue.prototype.$vbModalDialogue = modal;
+    Vue.prototype.$vbModal = modal;
 };
 install(Vue)
 export default {
@@ -96,7 +96,7 @@ export default {
             this.aniModalD=new Date()
         },
         showModalDJs:function () {
-            this.$vbModalDialogue({
+            this.$vbModal({
                 propTitle:'title:'+new Date().getTime(),
                 isCanClickMask:true,
                 propContent:'content:'+new Date().getTime(),

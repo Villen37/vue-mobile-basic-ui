@@ -25,7 +25,7 @@ const install = function (Vue, opts = {}) {
         Vue.component(component.name, component);
     }
     Vue.prototype.$vbToast = vbToast;
-    Vue.prototype.$vbModalDialogue = vbModalDialogue;
+    Vue.prototype.$vbModal = vbModalDialogue;
 };
 
 module.exports = {
