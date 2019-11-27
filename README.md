@@ -1,9 +1,9 @@
 # vue-mobile-basic-ui
 在VUE开发中有一些组件ui其实不需要区分平台和类型，这里做了一些封装，可以应用在一些简单交互上，快捷方便。
-### 测试阶段。。。
 
 html的"font-size:100px"下，UI正常使用
-使用：npm install vue-mobile-basic-ui
+
+#### 使用：npm install vue-mobile-basic-ui
 
 ## 基本用法
 
