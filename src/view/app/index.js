@@ -2,7 +2,8 @@
  * Created by Villen on 19/11/16.
  */
 import Vue from 'vue'
-
+// modal-container 提示
+import vbModalContainer from '../../packages/modal-container/index.vue';
 // scroll-stop 提示
 import vbRollStop from '../../packages/roll-stop/index.vue';
 // cover-img 蒙层loading
@@ -26,6 +27,7 @@ export default {
             aniPullDown:'',
             dataRoll:['list信息1','list信息2','list信息3','list信息4','list信息5','list信息6','list信息7'],
             toastPorp:{},
+            aniModalC:false,
             last:0
         }
     },
@@ -34,7 +36,8 @@ export default {
         vbCoverLoading,
         vbPulldownRefresh,
         vbRollList,
-        vbToast
+        vbToast,
+        vbModalContainer
     },
     watch:{
 
@@ -78,6 +81,9 @@ export default {
                 propVisible:new Date(),
                 propDelay:2000
             })
+        },
+        showModalC:function () {
+            this.aniModalC=true
         }
     }
 }

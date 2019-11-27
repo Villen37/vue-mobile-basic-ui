@@ -25,7 +25,7 @@ export default {
         }
     },
     mounted() {
-        //document.querySelector(".roll-list-container")​
+        //document.querySelector(".vb-roll-list-container")​
         //this.listRolling(this.propListLength);
         this.listRolling(this.propData.length);
     },

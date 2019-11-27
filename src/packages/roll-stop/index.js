@@ -34,7 +34,7 @@ export default {
 
     },
     mounted() {
-        //document.querySelector(".ac-roll-container")​
+        //document.querySelector(".vb-roll-container")​
         this.setDom(this.propCoinNum);
         this.listRolling();
     },

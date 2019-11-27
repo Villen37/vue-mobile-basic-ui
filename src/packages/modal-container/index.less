@@ -1,0 +1,31 @@
+@import "../../styles/common.less";
+
+.vb-modal-container{
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  position: fixed;
+  background: rgba(0,0,0,.5);
+  left: 0;
+  top: 0;
+  justify-content: center;
+  color: #fff;
+  font-size: .14rem;
+  line-height: .2rem;
+  z-index: 9999;
+  transition: opacity .1s ease;
+  opacity: 0;
+  .vb-modal-body{
+    opacity: 0;
+    transition: opacity .3s ease .2s;
+  }
+  &.show{
+    width: 100%;
+    height: 100vh;
+    opacity: 1;
+    .vb-modal-body{
+      opacity: 1;
+    }
+  }
+
+}

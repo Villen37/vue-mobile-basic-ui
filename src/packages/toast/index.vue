@@ -1,10 +1,10 @@
 <template>
     <transition :name="propName">
-        <div :class="['toast-container', visible && 'show']"  key="comp-toast">
-            <div :class="['ac-toast', shower, toastParams && toastParams.cls]" >
-                <div class="ac-toast-wrapper">
+        <div :class="['vb-toast-container', visible && 'show']"  key="comp-toast">
+            <div :class="['vb-ac-toast', shower, toastParams && toastParams.cls]" >
+                <div class="vb-toast-wrapper">
                     <img v-if="propIcon" :src="propIcon" alt="">
-                    <div v-if="propMsg" class="ac-msg">
+                    <div v-if="propMsg" class="vb-toast-msg">
                         {{propMsg}}
                     </div>
                     <slot></slot>

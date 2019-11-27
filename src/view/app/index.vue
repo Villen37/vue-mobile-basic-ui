@@ -12,6 +12,10 @@
             <div class="tip" @click="showLoading">点击展示</div>
             <vb-cover-loading :propShow="aniLoading"></vb-cover-loading>
 
+            <div class="title">modal层</div>
+            <div class="tip" @click="showModalC">点击展示</div>
+            <vb-modal-container :propShow="aniModalC"></vb-modal-container>
+
 
             <div class="title">下拉刷新</div>
             <div class="tip">(请直接进行下拉操作)</div>

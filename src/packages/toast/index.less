@@ -1,4 +1,4 @@
-.toast-container{
+.vb-toast-container{
   z-index: 999;
   width:0;
   height:0;
@@ -7,11 +7,11 @@
   left: 0;
   overflow: hidden;
 }
-.show.toast-container{
+.show.vb-toast-container{
   width: 100%;
   height: 100%;
 }
-.ac-toast {
+.vb-ac-toast {
   max-width: 4rem;
   border-radius: .05rem;
   font-size: .16rem;
@@ -25,19 +25,19 @@
   transition: opacity ease .3s, top ease .3s;
   padding: .12rem 0;
 }
-.show.ac-toast{
+.show.vb-ac-toast{
   opacity: 1;
   top: 35%;
 }
-.js-toast .ac-toast{
+.js-toast .vb-ac-toast{
   opacity: 0 !important;
   top: 40%!important;
 }
-.js-toast-show .show.ac-toast{
+.js-toast-show .show.vb-ac-toast{
   opacity: 1!important;
   top: 35%!important;
 }
-.ac-toast .ac-toast-wrapper {
+.vb-ac-toast .vb-toast-wrapper {
   width: 100%;
   height: 100%;
   display: flex;
@@ -45,14 +45,14 @@
   flex-direction: column;
   align-items: center;
 }
-.ac-toast img {
+.vb-ac-toast img {
   margin-bottom: .12rem;
   display: block;
   width: .4rem;
   height: .4rem;
 }
 
-.ac-toast .ac-msg {
+.vb-ac-toast .vb-toast-msg {
   padding: 0 .23rem;
   word-break:break-all;
   white-space: nowrap;

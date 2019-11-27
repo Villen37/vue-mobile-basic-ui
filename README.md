@@ -15,11 +15,11 @@ html的"font-size:100px"下，UI正常使用
 
 ## 具体组件
 
-### Toast  信息提示
+### vbToast  信息提示
 
 ```javascript
 // 如果组件库全局注册
-this.$toast(Object options)
+this.$vbToast(Object options)
 // 若没有
 import { vbToast } from 'vue-mobile-basic-ui'
 ```
@@ -85,5 +85,14 @@ propIcon       |string      |设置图标         |               | ——
 
 支持slot
 
+### vbModalContainer  modal的黑色半透明背景的容器
 
+```javascript
+import { vbModalContainer } from 'vue-mobile-basic-ui'
+```
+参数            |类型           |说明                 |默认值      |可选值
+---------------|---------------|---------------------|----------|----------------------------
+propShow       |boolean     |true           |true                  |true/false
+onClose        |Function    |关闭回调        |——                    | ——
 
+slot自己把内容丢进去
