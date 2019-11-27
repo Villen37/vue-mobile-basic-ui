@@ -5,6 +5,8 @@ import vbRollStop from './packages/roll-stop/index.vue';
 import vbPulldownRefresh from './packages/pulldown-refresh/index.vue';
 import vbRollList from './packages/roll-list/index.vue';
 import vbCoverLoading from './packages/cover-loading/index.vue';
+import vbModalContainer from './packages/modal-container/index.vue';
+import vbModalDialogue from './packages/modal-dialogue/modal.js';
 import vbToast from './packages/toast/toast.js';
 
 const components = {
@@ -12,6 +14,7 @@ const components = {
     vbPulldownRefresh,
     vbRollList,
     vbCoverLoading,
+    vbModalContainer
 };
 
 const install = function (Vue, opts = {}) {
@@ -22,10 +25,12 @@ const install = function (Vue, opts = {}) {
         Vue.component(component.name, component);
     }
     Vue.prototype.$vbToast = vbToast;
+    Vue.prototype.$vbModalDialogue = vbModalDialogue;
 };
 
 module.exports = {
     ...components,
     install,
-    vbToast
+    vbToast,
+    vbModalDialogue
 }

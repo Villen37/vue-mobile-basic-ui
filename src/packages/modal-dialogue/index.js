@@ -1,121 +1,107 @@
 /**
- * Created by villen on 2019/11/24.
+ * Created by villen on 2019/11/27.
  */
 
-import cryImg from '../../imgs/cry.png';
-import warningImg from '../../imgs/exclamation.png';
-import xImg from '../../imgs/x.png';
-import successImg from '../../imgs/success.png';
-const typeConfig = {
-    success: {
-        icon: successImg,
-        cls: 'success',
-    }, error: {
-        icon: xImg,
-        cls: 'error',
-    }, warning: {
-        icon: warningImg,
-        cls: 'warning',
-    }, regret: {
-        icon: cryImg,
-        cls: 'regret',
-    },
-};
-
 export default {
-    name: 'vbtoast',
+    name: 'vbModalDialogue',
     props: {
-        name: {
+        propBgClass: {
             type: String,
-            default: 'fade'
+            default: 'default-bg-container'
         },
-        type: {
+        propTitle: {
             type: String,
             default: ''
+        },
+        propContent: {
+            // type: String,
+            default: ''
+        },
+        propTip: {
+            type: String,
+            default: ''
+        },
+        propConfirmText: {
+            type: String,
+            default: '确认'
+        },
+        propCancelText: {
+            type: String,
+            default: '取消'
         },
         propVisible: {
-            default: 'none'
-        },
-        delayCount: {
-            type: Number,
-            default: 1800
-        },
-        icon: {
-            type: String,
-            default: ''
-        },
-        propMsg: {
-            type: String,
-            default: ''
+            default: false
         },
         onClose: {
             type: Function,
             default: function () {
             }
         },
-    },
-    staticData: {
-        timer: null,
+        onCancel: {
+            type: Function,
+            default: function () {
+
+            }
+        },
+        onConfirm: {
+            type: Function,
+            default: function () {
+
+            }
+        },
+        showMask: {
+            type: Boolean,
+            default: true
+        },
+        isCanClickMask: {
+            type: Boolean,
+            default: false
+        },
+        showCloseIcon: {
+            type: Boolean,
+            default: true
+        },
+        showConfirmBtn: {
+            type: Boolean,
+            default: true
+        },
+        showCancelBtn: {
+            type: Boolean,
+            default: true
+        },
     },
     data() {
         return {
-            visible: (this.propVisible=='none' || this.propVisible=='') ? false : true,
-            shower:''
+            visible: this.propVisible,
         }
     },
     watch: {
         'propVisible'(val) {
-            if (val=='none') {
-                this.visible = false;
-            }else{
-                if(!this.visible){
-                    this.visible = true;
-                    this.runTimer();
-                }
-
+            if (this.visible !== val) {
+                this.visible = true;
             }
-        },
-    },
-    mounted(){
-        if (this.visible) {
-            this.runTimer();
-        }
-    },
-    computed: {
-        toastParams() {
-            if (this.type && typeConfig[this.type]) {
-                return typeConfig[this.type];
-            }
-            return null;
         }
     },
     methods: {
-        runTimer() {
-            if (this.$options.staticData.timer) {
-                clearTimeout(this.$options.staticData.timer);
-                this.$options.staticData.timer = null;
-            }
-            let self = this;
-            self.shower='show';
-
-            this.$options.staticData.timer = setTimeout(this.close, this.delayCount);
-        },
         close() {
-            let self = this;
+            this.visible = false;
             this.onClose();
-            this.$options.staticData.timer = null;
-            this.shower='';
-            setTimeout(function () {
-                self.visible = false;
-            },0)
-
+        },
+        cancel() {
+            this.close();
+            this.onCancel();
+        },
+        clickMask() {
+            if (!this.isCanClickMask) return false;
+            this.cancel();
+        },
+        confirm() {
+            this.onConfirm();
+            this.close();
         },
         destroyElement() {
             this.$destroy(true);
             this.$el.parentNode.removeChild(this.$el);
         },
-        transitionComplete(){
-            console.log('this is complete')
-        }
     }
 }

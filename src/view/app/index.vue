@@ -16,6 +16,10 @@
             <div class="tip" @click="showModalC">点击展示</div>
             <vb-modal-container :propShow="aniModalC"></vb-modal-container>
 
+            <div class="title">modal对话框</div>
+            <div class="tip" @click="showModalD">点击展示</div>
+            <div class="tip" @click="showModalDJs">点击展示2</div>
+            <vb-modal-dialogue :propVisible="aniModalD" tipText="zheddd" propTitle="需要吗" propContent="我么想用你的地理位置可以吗位置可以吗位置可以吗"></vb-modal-dialogue>
 
             <div class="title">下拉刷新</div>
             <div class="tip">(请直接进行下拉操作)</div>

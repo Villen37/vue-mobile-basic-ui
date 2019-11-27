@@ -1,53 +1,190 @@
-.toast-container{
-  z-index: 999;
-  width:0;
-  height:0;
+
+.ac-modal-bg-container {
+  font-size: .14rem;
   position: fixed;
-  top:0;
   left: 0;
-  overflow: hidden;
-}
-.show.toast-container{
-  width: 100%;
-  height: 100%;
-}
-.ac-toast {
-  max-width: 4rem;
-  border-radius: .05rem;
-  font-size: .16rem;
-  color: #ffffff;
-  position: fixed;
-  left: 50%;
-  top: 40%;
-  background: rgba(0, 0, 0, 0.6);
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  width: 0;
+  height: 0;
+  transition: opacity .2s ease;
   opacity: 0;
-  transform: translateX(-50%);
-  transition: opacity ease .3s ,top ease .3s;
-  padding: .12rem 0;
-}
-.show.ac-toast{
-  opacity: 1;
-  top: 35%;
-}
-.ac-toast .ac-toast-wrapper {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-}
-.ac-toast img {
-  margin-bottom: .12rem;
-  display: block;
-  width: .4rem;
-  height: .4rem;
+  &.show{
+    width: 100%;
+    height: 100vh;
+    opacity: 1;
+  }
 }
 
-.ac-toast .ac-msg {
-  padding: 0 .23rem;
-  word-break:break-all;
-  white-space: nowrap;
+.transparent {
+  background: rgba(0, 0, 0, 0);
+}
+
+.ac-modal-container {
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  text-align: center;
+  background: #ffffff;
+  //z-index: 999;
+}
+
+.ac-modal-cancel-icon {
+  position: absolute;
+  right: -.64rem;
+  bottom: -.94rem;
+  width: .5rem;
+  height: .5rem;
+  left: 50%;
+  margin-left: -.25rem;
+  background: url('./img/close.png') no-repeat;
+  background-size: cover;
+}
+
+.ac-modal-confirm-btn {
+  display: inline-block;
+
+}
+
+.ac-modal-cancel-btn {
+  display: inline-block;
+}
+
+.default-bg-container {
+  .ac-modal-container {
+    width: 2.6rem;
+    min-height: 1.6rem;
+    border-radius: .05rem;
+    background: #ffffff;
+    margin-left: -1.3rem;
+    .ac-modal-cancel-icon {
+      width: .12rem;
+      height: .12rem;
+      top: .15rem;
+      left: auto;
+      right: .15rem;
+      background: url('./img/x.png') no-repeat;
+      background-size: cover;
+    }
+    .ac-modal-content-ctn {
+      min-height: 1rem;
+      width: 2.5rem;
+      margin: .2rem auto 0;
+      justify-content: center;
+      flex-direction: column;
+      border-bottom: .01rem solid #edeff3;
+    }
+    .ac-modal-title {
+      font-size: .18rem;
+      color: #333333;
+    }
+    .ac-modal-content {
+      width: 2.3rem;
+      margin: 0.15rem auto;
+      font-size: .14rem;
+      color: #666666;
+      text-align: left;
+    }
+    .ac-modal-btn-group {
+      font-size: .15rem;
+      height: .4rem;
+      line-height: .4rem;
+      display: flex;
+      div {
+        width: 50%;
+        box-sizing: border-box;
+        margin: 0 auto;
+      }
+      .ac-modal-confirm-btn {
+        color: #333333;
+      }
+      .ac-modal-cancel-btn {
+        color: #666666;
+        border-right: 1px solid #edeff3;
+      }
+    }
+  }
+}
+
+.default-bg-container-2 {
+  .ac-modal-container {
+    top: 1.97rem;
+    width: 5.9rem;
+    padding-bottom: .8rem;
+    margin-left: -2.95rem;
+
+    border-radius: .28rem;
+    .ac-modal-cancel-icon {
+      width: .36rem;
+      height: .36rem;
+      top: .3rem;
+      left: auto;
+      right: .31rem;
+      background: url('./img/x.png') no-repeat;
+      background-size: cover;
+    }
+    .ac-modal-content-ctn {
+      position: relative;
+      //filter:blur(5px);
+      .ac-modal-filter {
+        position: absolute;
+        height: 20px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        filter: blur(10px);
+        background: #ffffff;
+      }
+    }
+    .ac-modal-title {
+      margin-top: .67rem;
+      font-size: .36rem;
+      color: #333333;
+    }
+    .ac-modal-content {
+      position: relative;
+      width: 4.62rem;
+      padding: 0 .15rem .1rem;
+      height: 5rem;
+      overflow: auto;
+      margin: .3rem auto 0;
+      font-size: .33rem;
+      text-align: left;
+      line-height: .5rem;
+      color: #666666;
+
+    }
+  }
+}
+
+//.default-bg-container-3 {
+//  // 端内微信分享弹窗样式
+//  width: 100%;
+//  height: 2.66rem;
+//  left: 0;
+//  bottom: 0;
+//}
+
+.default-bg-container-3 {
+  // 微信内分享的弹窗样式
+  .ac-modal-container {
+    box-sizing: border-box;
+    background: rgba(0, 0, 0, 0) url(./img/guide.png) 3.17rem 0 no-repeat;
+    //background: red;
+    background-size: 1.13rem .95rem;
+    width: 4.3rem;
+    height: 1rem;
+    padding-right: .94rem;
+    padding-top: .4rem;
+    left: auto;
+    top: .21rem;
+    right: .63rem;
+    font-size: .42rem;
+    color: #ffffff;
+  }
 }
 
 

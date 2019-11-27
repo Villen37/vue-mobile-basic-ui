@@ -4,6 +4,8 @@
 import Vue from 'vue'
 // modal-container 提示
 import vbModalContainer from '../../packages/modal-container/index.vue';
+// modal-dialogue 提示
+import vbModalDialogue from '../../packages/modal-dialogue/index.vue';
 // scroll-stop 提示
 import vbRollStop from '../../packages/roll-stop/index.vue';
 // cover-img 蒙层loading
@@ -14,9 +16,13 @@ import vbPulldownRefresh from '../../packages/pulldown-refresh/index.vue';
 import vbRollList from '../../packages/roll-list/index.vue';
 // toast 提示
 import vbToast from '../../packages/toast/index.vue';
+
+//------注册
 import toast from '../../packages/toast/toast';
+import modal from '../../packages/modal-dialogue/modal';
 const install = function (Vue, opts = {}) {
     Vue.prototype.$vbToast = toast;
+    Vue.prototype.$vbModalDialogue = modal;
 };
 install(Vue)
 export default {
@@ -28,6 +34,7 @@ export default {
             dataRoll:['list信息1','list信息2','list信息3','list信息4','list信息5','list信息6','list信息7'],
             toastPorp:{},
             aniModalC:false,
+            aniModalD:false,
             last:0
         }
     },
@@ -37,10 +44,10 @@ export default {
         vbPulldownRefresh,
         vbRollList,
         vbToast,
-        vbModalContainer
+        vbModalContainer,
+        vbModalDialogue
     },
     watch:{
-
 
     },
     mounted(){
@@ -84,6 +91,17 @@ export default {
         },
         showModalC:function () {
             this.aniModalC=true
+        },
+        showModalD:function () {
+            this.aniModalD=new Date()
+        },
+        showModalDJs:function () {
+            this.$vbModalDialogue({
+                propTitle:'title:'+new Date().getTime(),
+                isCanClickMask:true,
+                propContent:'content:'+new Date().getTime(),
+                propVisible:new Date()
+            })
         }
     }
 }

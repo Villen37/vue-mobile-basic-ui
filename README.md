@@ -39,7 +39,7 @@ import { vbCoverLoading } from 'vue-mobile-basic-ui'
 ```
 参数           |类型           |说明                 |默认值                  |可选值
 ---------------|------------|---------------|------------------------|----------------------------
-propShow       |boolean     |true           |true                  |true/false
+propShow       |boolean      |           |是否展示                  |true/false
 onClose        |Function    |关闭回调        |——                    | ——
 propDefault    |boolean     |true           |如果false，就自己写内部图文，以下不生效| ——
 propImgLoading |string      |loading图      |本地图              | ——
@@ -92,7 +92,30 @@ import { vbModalContainer } from 'vue-mobile-basic-ui'
 ```
 参数            |类型           |说明                 |默认值      |可选值
 ---------------|---------------|---------------------|----------|----------------------------
-propShow       |boolean     |true           |true                  |true/false
+propShow       |boolean      |           |是否展示                  |true/false
 onClose        |Function    |关闭回调        |——                    | ——
 
 slot自己把内容丢进去
+
+### vbModalDialogue  modal的黑色半透明背景的容器
+
+```javascript
+import { vbModalDialogue } from 'vue-mobile-basic-ui'
+```
+| 参数           |类型              |说明                   |默认值                      |可选值
+-----------------|------------------|-----------------------| ---------------------------|------
+|propBgClass  |string            |modal遮罩层的样式类    |default-bg-container        |——
+|propTitle           |string            |标题                   |——                        |——
+|propContent         |string/VNode      |内容                   |——                        |——
+|propTip         |string            |提示标签               |——                        |——
+|propConfirmText  |string            |确认按钮文案           |确认                        |——
+|propCancelText   |string            |取消按钮文案           |取消                        |——
+|propVisible     |string            |是否可见               |none                        |'任意字符'/none
+|onClose         |Function          |modal关闭回调          |——                        |——
+|onCancel        |Function          |取消回调               |——                        |——
+|onConfirm       |Function          |确认回调               |——                        |——
+|showMask        |Boolean           |是否显示遮罩           |true                        |true/false
+|showCloseIcon   |Boolean           |是否显示关闭icon       |true                        |true/false
+|showConfirmBtn  |Boolean           |是否显示确认按钮       |true                        |true/false
+|showCancelBtn   |Boolean           |是否显示取消按钮       |true                        |true/false
+|isCanClickMask  |Boolean           |是否点击遮罩关闭       |true                        |true/false
