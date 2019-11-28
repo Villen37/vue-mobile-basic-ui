@@ -22,7 +22,7 @@
             <vb-modal-dialogue :propVisible="aniModalD" tipText="zheddd" propTitle="需要吗" propContent="我么想用你的地理位置可以吗位置可以吗位置可以吗"></vb-modal-dialogue>
 
             <div class="title">下拉刷新</div>
-            <div class="tip">(请直接进行下拉操作)</div>
+            <div class="tip" style="color: darkgray">(请直接进行下拉操作)</div>
 
             <div class="title">数据滚动</div>
             <div class="comp-roll-list">

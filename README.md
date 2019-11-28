@@ -123,3 +123,7 @@ import { vbModalDialogue } from 'vue-mobile-basic-ui'
 |showConfirmBtn  |Boolean           |是否显示确认按钮       |true                        |true/false
 |showCancelBtn   |Boolean           |是否显示取消按钮       |true                        |true/false
 |isCanClickMask  |Boolean           |是否点击遮罩关闭       |true                        |true/false
+
+
+#### 备注：暂时不建议使用 " this.$** ""的方法直接调用，这种方式会频繁插入和删除节点引起重排
+

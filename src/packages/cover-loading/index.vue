@@ -1,5 +1,5 @@
 <template>
-<div :class="['vb-cover-loading flex']" v-if="visible" @touchmove.prevent>
+<div :class="['vb-cover-loading flex-blance', visible && 'show']" @touchmove.prevent>
 
     <div class="vb-cover-body flex" v-if="propDefault && visible!='break'">
         <img v-if="propImgLoading" src="propImgLoading">

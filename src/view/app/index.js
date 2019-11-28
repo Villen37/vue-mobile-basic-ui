@@ -67,7 +67,7 @@ export default {
             this.aniLoading=true;
             setTimeout(()=>{
                 this.aniLoading=false;
-            },2000)
+            },200000)
         },
         pulldownEnd:function (option) {
             setTimeout(()=>{

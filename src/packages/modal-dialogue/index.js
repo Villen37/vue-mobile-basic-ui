@@ -73,7 +73,7 @@ export default {
     data() {
         return {
             visible: this.propVisible,
-            showContentClass:''
+            showModalClass:''
         }
     },
     mounted(){
@@ -83,7 +83,7 @@ export default {
             if (this.visible !== val) {
                 this.visible = true;
                 setTimeout(()=>{
-                    this.showContentClass='show'
+                    this.showModalClass='show'
                 },10)
             }
         }
@@ -91,7 +91,7 @@ export default {
     methods: {
         close() {
             this.visible = false;
-            this.showContentClass='';
+            this.showModalClass='';
             this.onClose();
         },
         cancel() {
