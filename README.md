@@ -67,14 +67,14 @@ import { vbPulldwonRefresh } from 'vue-mobile-basic-ui'
 ```
 参数           |类型           |说明                 |默认值                  |可选值
 ---------------|------------|---------------|--------------------|----------------------------
-propState      |string      |是否生效        |-                   | no,禁用 0，恢复隐藏
+propState      |string      |是否生效        |-                   | no:禁用 0:隐藏 1:展示
 propKey0       |string      |展示文案        |下拉即可刷新           | ——
 propKey1       |string      |展示文案        |释放即可刷新           | ——
 propKey2       |string      |展示文案        |加载中                | ——
 
 touchEnd的回调 @listeningEmit="自己的方法"，也可以通过执行回调里的option.fun，来结束下拉动画
 
-### vbRollList  下拉刷新，整个页面上的使用
+### vbRollList 数据单行滚动
 
 ```javascript
 import { vbRollList } from 'vue-mobile-basic-ui'
@@ -125,5 +125,5 @@ import { vbModalDialogue } from 'vue-mobile-basic-ui'
 |isCanClickMask  |Boolean           |是否点击遮罩关闭       |true                        |true/false
 
 
-#### 备注：暂时不建议使用 " this.$** ""的方法直接调用，这种方式会频繁插入和删除节点引起重排
+#### 备注：暂时不建议使用 " this.$** "的方法直接调用，这种方式会频繁插入和删除节点引起重排
 

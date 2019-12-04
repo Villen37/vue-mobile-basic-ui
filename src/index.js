@@ -6,15 +6,19 @@ import vbPulldownRefresh from './packages/pulldown-refresh/index.vue';
 import vbRollList from './packages/roll-list/index.vue';
 import vbCoverLoading from './packages/cover-loading/index.vue';
 import vbModalContainer from './packages/modal-container/index.vue';
-import vbModalDialogue from './packages/modal-dialogue/modal.js';
-import vbToast from './packages/toast/toast.js';
+import vbModalDialogue from './packages/modal-dialogue/index.vue';
+import vbToast from './packages/toast/index.vue';
+import vbjsModalDialogue from './packages/modal-dialogue/modal.js';
+import vbjsToast from './packages/toast/toast.js';
 
 const components = {
     vbRollStop,
     vbPulldownRefresh,
     vbRollList,
     vbCoverLoading,
-    vbModalContainer
+    vbModalContainer,
+    vbModalDialogue,
+    vbToast
 };
 
 const install = function (Vue, opts = {}) {
@@ -24,13 +28,11 @@ const install = function (Vue, opts = {}) {
         const component = components[key];
         Vue.component(component.name, component);
     }
-    Vue.prototype.$vbToast = vbToast;
-    Vue.prototype.$vbModal = vbModalDialogue;
+    Vue.prototype.$vbToast = vbjsToast;
+    Vue.prototype.$vbModal = vbjsModalDialogue;
 };
 
 module.exports = {
     ...components,
     install,
-    vbToast,
-    vbModalDialogue
 }
