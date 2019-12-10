@@ -29,6 +29,13 @@
                 <vb-roll-list :propData="dataRoll" ></vb-roll-list>
             </div>
 
+            <div class="title">进度条</div>
+            <div class="comp-progress">
+                <vb-progress :propNumArr="dataProgressNum" :propBotArr="dataProgressNum" :propTopArr="dataProgressDesc">
+                    <div class="tip">3</div>
+                </vb-progress>
+            </div>
+
             <div class="title">Toast</div>
             <div class="tip" @click="showToast">点击弹出</div>
             <div class="tip" @click="showToastJs">点击弹出2</div>

@@ -11,3 +11,5 @@ webpack.config.js
 postcs.config.js
 test/unit/coverage/
 src/view/
+src/packages/
+src/styles/

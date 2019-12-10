@@ -16,6 +16,8 @@ import vbPulldownRefresh from '../../packages/pulldown-refresh/index.vue';
 import vbRollList from '../../packages/roll-list/index.vue';
 // toast 提示
 import vbToast from '../../packages/toast/index.vue';
+// toast 提示
+import vbProgress from '../../packages/progress/index.vue';
 
 //------注册
 import toast from '../../packages/toast/toast';
@@ -35,11 +37,14 @@ export default {
             toastPorp:{},
             aniModalC:false,
             aniModalD:false,
+            dataProgressNum :[100,200,300,400,500],
+            dataProgressDesc :['一百','二百','三百','四百','五百'],
             last:0
         }
     },
     components: {
         vbRollStop,
+        vbProgress,
         vbCoverLoading,
         vbPulldownRefresh,
         vbRollList,

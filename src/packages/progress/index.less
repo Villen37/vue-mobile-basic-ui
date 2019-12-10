@@ -1,0 +1,98 @@
+/*
+进度
+*/
+.walk-progress{
+  width: 95%;
+  margin:0 auto;
+  .gress-staps{
+    font-size: .12rem;
+    white-space:nowrap;
+    &>*{
+      display: inline-block;
+      text-align: right;
+      img{
+        display: inline-block;
+        width: .17rem;
+        vertical-align: middle;
+      }
+    }
+    &.gress-coin{
+      color: #FFF657;
+    }
+  }
+  .gress-line{
+    width: 100%;
+    height: .06rem;
+    border-radius: .06rem;
+    background: rgba(255,255,255,.6);
+    margin: .06rem auto .1rem;
+    position: relative;
+    .slot{
+      position: absolute;
+      top: 0;
+      transition: left .6s ease-in;
+    }
+    .gress-line-got{
+      border-radius: .06rem;
+      max-width: 100%;
+      height: 100%;
+      position: absolute;
+      transition: width .6s ease-in;
+      /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#ffb548+0,fff657+100 */
+      background: #ffb548; /* Old browsers */
+      background: -moz-linear-gradient(left, #ffb548 0%, #fff657 100%); /* FF3.6-15 */
+      background: -webkit-linear-gradient(left, #ffb548 0%,#fff657 100%); /* Chrome10-25,Safari5.1-6 */
+      background: linear-gradient(to right, #ffb548 0%,#fff657 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+      filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffb548', endColorstr='#fff657',GradientType=1 ); /* IE6-9 */
+
+      &.got-default-mark{
+        span,
+        &::before,
+        &::after{
+          display: block;
+          content: '';
+          height: .06rem;
+          width: .06rem;
+          border-radius: 100%;
+          background: #FFF657;
+          position: absolute;
+          right: -0.03rem;
+          top:0;
+          transform: scale(1.5);
+        }
+        &::before{
+          background: rgba(255,255,255,.6);
+          transform: scale(2.2);
+        }
+        span{
+          transform: scale(2.1);
+          background: rgba(255,255,255,.6);
+        }
+        &.got{
+          &::before{
+            animation: circleShow 2s ease-in infinite;
+          }
+        }
+      }
+
+    }
+  }
+}
+@keyframes circleShow {
+  0%{
+    transform: scale(2.2);
+    opacity: 1;
+  }
+  40%{
+    transform: scale(5);
+    opacity: 0;
+  }
+  50%{
+    transform: scale(1);
+    opacity: 0;
+  }
+  100%{
+    transform: scale(2.2);
+    opacity: 1;
+  }
+}

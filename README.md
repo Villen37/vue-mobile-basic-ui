@@ -125,5 +125,22 @@ import { vbModalDialogue } from 'vue-mobile-basic-ui'
 |isCanClickMask  |Boolean           |是否点击遮罩关闭       |true                        |true/false
 
 
+### vbProgress 进度条
+
+```javascript
+import { vbProgress } from 'vue-mobile-basic-ui'
+```
+参数            |类型           |说明                 |默认值      |可选值
+---------------|---------------|---------------------|----------|----------------------------
+propNumArr       |array       |进度数字列表      |-                   | 
+propTopArr       |array       |顶部描述       |-                   | 
+propBotArr       |array       |底部描述      |-                   | 
+propCurrent      |number      |当前值      |-                   | 
+propDefaultMark  |Boolean     |关闭回调        |true                   | ——
+
+slot 可以写一个气泡，left是跟随进度条的
+propTopArr、propBotArr中的元素可以是html，满足多种样式需求
+
+
 #### 备注：暂时不建议使用 " this.$** "的方法直接调用，这种方式会频繁插入和删除节点引起重排
 
