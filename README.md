@@ -136,9 +136,9 @@ propNumArr       |array       |进度数字列表      |-                   |
 propTopArr       |array       |顶部描述       |-                   | 
 propBotArr       |array       |底部描述      |-                   | 
 propCurrent      |number      |当前值      |-                   | 
-propDefaultMark  |Boolean     |关闭回调        |true                   | ——
+propDefaultMark  |Boolean     |进度头有个默认的圆点   |true                   | ——
 
-slot 可以写一个气泡，left是跟随进度条的
+slot 可以写一个气泡，位置是跟随进度条的，如果不用，propDefaultMark设置为false
 propTopArr、propBotArr中的元素可以是html，满足多种样式需求
 
 
