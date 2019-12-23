@@ -21,21 +21,19 @@
   top: 40%;
   background: rgba(0, 0, 0, 0.6);
   opacity: 0;
-  transform: translateX(-50%);
-  transition: opacity ease .3s, top ease .3s;
+  transform: translate(-50%, 70%) ;
+  transition: opacity ease .3s, transform ease .3s;
   padding: .12rem 0;
 }
 .show.vb-ac-toast{
   opacity: 1;
-  top: 35%;
+  transform: translate(-50%, 0) ;
 }
 .js-toast .vb-ac-toast{
   opacity: 0 !important;
-  top: 40%!important;
 }
 .js-toast-show .show.vb-ac-toast{
   opacity: 1!important;
-  top: 35%!important;
 }
 .vb-ac-toast .vb-toast-wrapper {
   width: 100%;
