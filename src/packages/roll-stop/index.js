@@ -15,7 +15,7 @@ export default {
         return {
             'classAnimate':'',
             'defaultArr':["", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", "", ""],
-            'appendDom':'<div>76</div>'
+            'appendDom':'<div class="num-bg">0</div>'
         }
     },
     watch:{
@@ -46,7 +46,7 @@ export default {
             this.classAnimate='animate'
         },
         setDom(value){
-            if(value=='' || value==0){
+            if(value==''){
                 return '';
             }
             let str = typeof(value)=='number' ? value.toString()+'' : value;
