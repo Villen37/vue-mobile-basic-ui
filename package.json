@@ -1,7 +1,7 @@
 {
   "name": "vue-mobile-basic-ui",
   "email":"1204147289@qq.com",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "A basic front-end vue ui coponents library",
   "main": "lib/vueMobileBasicUi.min.js",
   "source":"open source in github, you can search name",

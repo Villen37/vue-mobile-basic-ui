@@ -6,6 +6,9 @@
   top:0;
   left: 0;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .show.vb-toast-container{
   width: 100%;
@@ -16,18 +19,15 @@
   border-radius: .05rem;
   font-size: .16rem;
   color: #ffffff;
-  position: fixed;
-  left: 50%;
-  top: 40%;
   background: rgba(0, 0, 0, 0.6);
   opacity: 0;
-  transform: translate(-50%, 70%) ;
+  transform: translateY(70%) ;
   transition: opacity ease .3s, transform ease .3s;
   padding: .12rem 0;
 }
 .show.vb-ac-toast{
   opacity: 1;
-  transform: translate(-50%, 0) ;
+  transform: translateY(0) ;
 }
 .js-toast .vb-ac-toast{
   opacity: 0 !important;
