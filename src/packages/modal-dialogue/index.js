@@ -1,9 +1,12 @@
 /**
  * Created by villen on 2019/11/27.
  */
-
+//import modalContainer from '../modal-container/index.vue'
 export default {
     name: 'vbModalDialogue',
+    /*components:{
+        modalContainer
+    },*/
     props: {
         propBgClass: {
             type: String,
@@ -80,19 +83,23 @@ export default {
     },
     watch: {
         'propVisible'(val) {
-            if (this.visible !== val) {
-                this.visible = true;
+            if (this.propVisible) {
+                this.showModalClass='show'
+            }else{
+                this.showModalClass='show hide';
                 setTimeout(()=>{
-                    this.showModalClass='show'
-                },10)
+                    this.showModalClass='';
+                },400)
             }
         }
     },
     methods: {
         close() {
-            this.visible = false;
-            this.showModalClass='';
             this.onClose();
+            this.showModalClass='show hide';
+            setTimeout(()=>{
+                this.showModalClass='';
+            },400)
         },
         cancel() {
             this.close();

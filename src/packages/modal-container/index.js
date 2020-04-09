@@ -7,6 +7,10 @@ export default {
             type: Boolean,
             default: false
         },
+        propCanClick:{
+            type: Boolean,
+            default: false
+        },
         propStyle:{
             default:''
         },
@@ -24,7 +28,7 @@ export default {
     },
     data(){
         return {
-            visible: this.propShow || false,
+            visible: this.propShow || '',
             visibleReload: this.onReload(),
             timer:null,
         }
@@ -32,10 +36,13 @@ export default {
     watch:{
         propShow(val) {
             if (val=='none' || val==false) {
-                this.visible = false;
+                this.visible = 'show hide';
+                setTimeout(()=>{
+                    this.visible = '';
+                },400)
             }else{
-                if(!this.visible){
-                    this.visible = true;
+                if(this.visible==''){
+                    this.visible = 'show';
                 }
 
             }
@@ -57,13 +64,20 @@ export default {
         close() {
             this.onClose();
             this.timer = null;
+            this.visible = 'show hide';
             setTimeout(()=>{
-                this.visible = false;
-            })
+                this.visible = '';
+            },400)
         },
         /*点击重试*/
         reload(){
             this.onReload();
+        },
+        /*点击背景*/
+        clickBg(){
+            if(this.propCanClick){
+                this.close()
+            }
         }
 
     }

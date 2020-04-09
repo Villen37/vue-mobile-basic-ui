@@ -14,7 +14,7 @@
 
             <div class="title">modal层</div>
             <div class="tip" @click="showModalC">点击展示</div>
-            <vb-modal-container :propShow="aniModalC">这里有文字</vb-modal-container>
+            <vb-modal-container :propShow="aniModalC">这里写主体（3秒后消失）</vb-modal-container>
 
             <div class="title">modal对话框</div>
             <div class="tip" @click="showModalD">点击展示</div>

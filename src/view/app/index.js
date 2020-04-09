@@ -96,6 +96,9 @@ export default {
         },
         showModalC:function () {
             this.aniModalC=true
+            setTimeout(()=>{
+                this.aniModalC=false
+            },3000)
         },
         showModalD:function () {
             this.aniModalD=new Date()

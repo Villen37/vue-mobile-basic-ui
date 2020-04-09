@@ -12,7 +12,7 @@
   color: #fff;
   font-size: .14rem;
   line-height: .2rem;
-  z-index: 9999;
+  z-index: 1000;
   transition: opacity .1s ease;
   opacity: 0;
   .vb-modal-body{
@@ -27,6 +27,15 @@
     .vb-modal-body{
       opacity: 1;
       transform: scale(1);
+    }
+    &.hide{
+      transition: opacity .1s ease .2s;
+      opacity: 0;
+      .vb-modal-body{
+        transition: all .2s ease;
+        opacity: 0!important;
+        transform: scale(.5)!important;
+      }
     }
   }
 

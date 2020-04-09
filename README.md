@@ -94,6 +94,7 @@ import { vbModalContainer } from 'vue-mobile-basic-ui'
 参数            |类型           |说明                 |默认值      |可选值
 ---------------|---------------|---------------------|----------|----------------------------
 propShow       |boolean      |           |是否展示                  |true/false
+propCanClick   |boolean      |           |是否可以点击空白关闭        |true/false
 onClose        |Function    |关闭回调        |——                    | ——
 
 slot自己把内容丢进去

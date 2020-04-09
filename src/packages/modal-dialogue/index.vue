@@ -1,5 +1,5 @@
 <template>
-<div :class="['ac-modal-bg-container', propBgClass, showMask ? '' : 'transparent', showModalClass]" @click.self="clickMask" :style="{display: visible, zIndex: 1001}" @touchmove.prevent>
+<div :class="['ac-modal-bg-container', propBgClass, showMask ? '' : 'transparent', showModalClass]" @click.self="clickMask" @touchmove.prevent>
     <div class="ac-modal-container">
         <div v-if="showCloseIcon" class="ac-modal-cancel-icon" @click="cancel"></div>
         <div class="ac-modal-content-ctn">
