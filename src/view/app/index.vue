@@ -42,7 +42,12 @@
             <div class="comp-roll-list">
                 <vb-toast :propVisible="toastPorp.visible" :propMsg="toastPorp.msg"></vb-toast>
             </div>
+            <div class="title">9宫格</div>
+            <div class="comp-grid">
+                <vb-grid9 :propData="dataGrids" :propFuncOver="gridFinish" :propOrder="4" :propReset="gridReset" :propRights="dataGridRight" :propFuncNot="gridNoRight">
 
+                </vb-grid9>
+            </div>
 
         </vb-pulldown-refresh>
 

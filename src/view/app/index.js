@@ -16,8 +16,10 @@ import vbPulldownRefresh from '../../packages/pulldown-refresh/index.vue';
 import vbRollList from '../../packages/roll-list/index.vue';
 // toast 提示
 import vbToast from '../../packages/toast/index.vue';
-// toast 提示
+// 进度条
 import vbProgress from '../../packages/progress/index.vue';
+// 9宫格
+import vbGrid9 from '../../packages/grid9/index.vue';
 
 //------注册
 import toast from '../../packages/toast/toast';
@@ -39,6 +41,43 @@ export default {
             aniModalD:false,
             dataProgressNum :[100,200,300,400,500],
             dataProgressDesc :['一百','二百','三百','四百','五百'],
+            dataGrids:[
+                {
+                    prizeIcon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    prizeName: "黄金VIP天卡"
+                },
+                {
+                    prizeIcon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    prizeName: "黄金VIP周卡",
+                },
+                {
+                    prizeIcon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    prizeName: "黄金VIP月卡",
+                },
+                {
+                    prizeIcon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    prizeName: "88金币"
+                },
+                {
+                    prizeIcon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    prizeName: "黄金VIP季卡"
+                },
+                {
+                    prizeIcon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    prizeName: "188金币"
+                },
+                {
+                    prizeIcon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    prizeName: "黄金VIP年卡"
+                },
+                {
+                    prizeIcon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    prizeName: "688金币"
+                }
+
+            ],
+            gridReset:0,
+            dataGridRight:1,
             last:0
         }
     },
@@ -50,7 +89,8 @@ export default {
         vbRollList,
         vbToast,
         vbModalContainer,
-        vbModalDialogue
+        vbModalDialogue,
+        vbGrid9
     },
     watch:{
 
@@ -110,6 +150,16 @@ export default {
                 propContent:'content:'+new Date().getTime(),
                 propVisible:new Date()
             })
+        },
+        gridFinish:function () {
+            this.toastPorp = {msg:'恭喜抽中', visible:'block'+new Date()};
+            this.dataGridRight--;
+            setTimeout(()=>{
+                this.gridReset = new Date().getTime()
+            },2000)
+        },
+        gridNoRight:function () {
+            this.toastPorp = {msg:'走开', visible:'block'+new Date()};
         }
     }
 }
