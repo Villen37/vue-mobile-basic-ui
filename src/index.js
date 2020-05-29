@@ -8,6 +8,8 @@ import vbCoverLoading from './packages/cover-loading/index.vue';
 import vbModalContainer from './packages/modal-container/index.vue';
 import vbModalDialogue from './packages/modal-dialogue/index.vue';
 import vbToast from './packages/toast/index.vue';
+import vbGrid9 from './packages/grid9/index.vue';
+
 import vbjsModalDialogue from './packages/modal-dialogue/modal.js';
 import vbjsToast from './packages/toast/toast.js';
 
@@ -18,7 +20,8 @@ const components = {
     vbCoverLoading,
     vbModalContainer,
     vbModalDialogue,
-    vbToast
+    vbToast,
+    vbGrid9
 };
 
 const install = function (Vue, opts = {}) {

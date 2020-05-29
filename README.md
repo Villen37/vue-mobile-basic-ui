@@ -139,7 +139,7 @@ propBotArr       |array       |底部描述      |-                   |
 propCurrent      |number      |当前值      |-                   | 
 propDefaultMark  |Boolean     |进度头有个默认的圆点   |true                   | ——
 
-slot 可以写一个气泡，位置是跟随进度条的，如果不用，propDefaultMark设置为false
+slot 可以写一个气泡，位置是跟随进度条的，如果不用，propDefaultMark设置为false  
 propTopArr、propBotArr中的元素可以是html，满足多种样式需求
 
 ### vbGrid9 9宫格抽奖
@@ -149,7 +149,7 @@ import { vbGrid9 } from 'vue-mobile-basic-ui'
 ```
 参数            |类型           |说明                 |默认值      |可选值
 ---------------|---------------|---------------------|----------|----------------------------
-propData         |array       |8个奖品0-7      |prizeIcon，prizeName                   | 
+propData         |array       |8个奖品0-7      |icon，name                   | 
 propRights       |number      |权益次数       |-                   | 
 propFuncOver       |function  |动画结束后执行      |-                   | 
 propFuncNot      |function    |没有权益执行      |-                   | 
@@ -158,12 +158,12 @@ propReset         |number string     |更换不同值就行   |  |
 propTips         |object     |over，noright 默认的操作提醒文案   |  | 
 
 
-如果定义了propFuncOver，就必须有propReset，手动重置动画
-slot 可以写中间的dom
-开放几个里面宫格class，方便二次改动：
-vb-grid9-item：常态
-vb-grid9-light：高亮状态
-vb-grid9-center：中间的格子
+如果定义了propFuncOver，就必须有propReset，手动重置动画  
+slot 可以写中间的dom  
+开放几个里面宫格class，方便二次改动：  
+vb-grid9-item：常态  
+vb-grid9-light：高亮状态  
+vb-grid9-center：中间的格子  
 
 
 
