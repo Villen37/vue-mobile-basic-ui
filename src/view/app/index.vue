@@ -44,7 +44,7 @@
             </div>
             <div class="title">9宫格</div>
             <div class="comp-grid">
-                <vb-grid9 :propData="dataGrids" :propFuncOver="gridFinish" :propOrder="4" :propReset="gridReset" :propRights="dataGridRight" :propFuncNot="gridNoRight">
+                <vb-grid9 :propData="dataGrids" :propFuncOver="gridFinish" :propOrder="gridPrizeOrder" :propReset="gridReset" :propRights="dataGridRight" :propFuncNot="gridNoRight">
 
                 </vb-grid9>
             </div>

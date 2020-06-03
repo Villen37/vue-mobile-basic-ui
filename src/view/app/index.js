@@ -77,6 +77,7 @@ export default {
 
             ],
             gridReset:0,
+            gridPrizeOrder:-1,
             dataGridRight:1,
             last:0
         }
@@ -103,6 +104,9 @@ export default {
                 propDelay:2000
             })
         },1000)*/
+        setTimeout(()=>{
+            this.gridPrizeOrder=5
+        },8000)
 
     },
     created() {

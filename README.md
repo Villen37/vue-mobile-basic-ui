@@ -153,6 +153,7 @@ propData         |array       |8个奖品0-7      |icon，name                  
 propRights       |number      |权益次数       |-                   | 
 propFuncOver       |function  |动画结束后执行      |-                   | 
 propFuncNot      |function    |没有权益执行      |-                   | 
+propFuncClick      |function    |点击中间执行      |-                   | 
 propOrder         |number     |中奖的索引   |                   | ——
 propReset         |number string     |更换不同值就行   |  | 
 propTips         |object     |over，noright 默认的操作提醒文案,设置为空就不提示了   |  | 

@@ -6,12 +6,11 @@
             <img v-if="item.icon" :src="item.icon">
             <p class="line-clamp-1" v-if="item.name">{{item.name}}</p>
         </div>
-        <div v-else class="item-cont vb-grid9-center flex" @click="getLottery">
+        <div v-else class="item-cont vb-grid9-center" @click="getLottery">
             <slot>
-                <div v-if="propRights>0" class="item-y">
-                    开始抽奖
+                <div class="item-y">
+                    <span>{{propRights}}</span> 次
                 </div>
-                <div v-else class="item-y">机会已用完</div>
             </slot>
 
         </div>

@@ -24,10 +24,13 @@ export default {
         propFuncNot:{               //没有权益
             type: Function
         },
+        propFuncClick:{               //点击中间
+            type: Function
+        },
         propOrder:{
-            type: Number,           //抽奖中了哪个
+            type: [Number,String],           //抽奖中了哪个
             default: ()=>{
-                return 0
+                return 8
             }
         },
         propReset:{
@@ -56,6 +59,7 @@ export default {
             spinAllow:true,                 //是否可以点击
             speed: SPEED_DEFAULT,           //旋转速度
             speedDefaultTimer: null,        //控制默认旋转
+            loadingTimes:0, //转几圈
             toastPorp:{}
 
         }
@@ -70,7 +74,9 @@ export default {
             }
         }*/
         propOrder(val){
-            this.lotteryOrder = this.propOrder
+            console.log(val,'---val')
+            this.lotteryOrder = val || -1;
+
         },
         propReset(val){
             if(val!='' && val!=0){
@@ -116,6 +122,7 @@ export default {
         //快速选择
         spinLottery() {
             let self = this;
+            self.loadingTimes++;
             if (self.speedDefaultTimer) {
                 //启动抽奖前 清除默认转动
                 this.uniformTimes = this.spinIndex;
@@ -133,7 +140,18 @@ export default {
                 console.log('抽奖结束', this.uniformTimes % 8, Math.abs(this.lotteryOrder - this.uniformTimes % 8 + 8))
                 clearTimeout(this.lotteryTimer);
                 setTimeout(() => {
-                    this.stopCallback(this.lotteryOrder);
+                    if(LOTTERY_ORDER.indexOf(this.lotteryOrder)==-1){
+                        this.spinRest();
+                        if(this.loadingTimes<5){
+                            this.spinLottery();
+                        }else{
+                            this.loadingTimes==0;
+                            this.toastPorp = {msg:'抽奖失败，请稍后～', visible:'block'+new Date()};
+                        }
+
+                    }else{
+                        this.stopCallback(this.lotteryOrder);
+                    }
                 }, 500);
             } else {
                 if (this.spinIndex < 99 * (CYCLE_TIMES + Math.abs(this.lotteryOrder - this.uniformTimes % 8 + 8)) / 100 + this.uniformTimes) {
@@ -176,7 +194,6 @@ export default {
             this.spinAllow = true;
             this.spinDefault();
 
-
         },
         stopCallback(lotteryOrder) {
             console.log('抽奖结束回调', lotteryOrder)
@@ -197,6 +214,9 @@ export default {
         },
         //点击中间位置
         getLottery(){
+            if(this.propFuncClick) {
+                this.propFuncClick();
+            }
             /*this.spinRest();
              */
             if(this.spinAllow){
