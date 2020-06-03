@@ -43,36 +43,36 @@ export default {
             dataProgressDesc :['一百','二百','三百','四百','五百'],
             dataGrids:[
                 {
-                    prizeIcon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
-                    prizeName: "黄金VIP天卡"
+                    icon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    name: "黄金VIP天卡"
                 },
                 {
-                    prizeIcon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
-                    prizeName: "黄金VIP周卡",
+                    icon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    name: "黄金VIP周卡",
                 },
                 {
-                    prizeIcon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
-                    prizeName: "黄金VIP月卡",
+                    icon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    name: "黄金VIP月卡",
                 },
                 {
-                    prizeIcon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
-                    prizeName: "88金币"
+                    icon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    name: "88金币"
                 },
                 {
-                    prizeIcon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
-                    prizeName: "黄金VIP季卡"
+                    icon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    name: "黄金VIP季卡"
                 },
                 {
-                    prizeIcon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
-                    prizeName: "188金币"
+                    icon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    name: "188金币"
                 },
                 {
-                    prizeIcon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
-                    prizeName: "黄金VIP年卡"
+                    icon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    name: "黄金VIP年卡"
                 },
                 {
-                    prizeIcon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
-                    prizeName: "688金币"
+                    icon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    name: "688金币"
                 }
 
             ],
