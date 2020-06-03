@@ -183,7 +183,8 @@ export default {
             if(lotteryOrder>-1){
                 if(this.propFuncOver) {
                     this.propFuncOver();
-                }else{
+                }
+                if(this.propTips.over){
                     this.toastPorp = {msg:this.propTips.over, visible:'block'+new Date()};
                 }
             }else{
@@ -202,7 +203,8 @@ export default {
                 if(this.propRights<1){
                     if(this.propFuncNot){
                         this.propFuncNot()
-                    }else{
+                    }
+                    if(this.propTips.noright){
                         this.toastPorp = {msg:this.propTips.noright, visible:'block'+new Date()};
                     }
                     return false

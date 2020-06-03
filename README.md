@@ -155,7 +155,7 @@ propFuncOver       |function  |动画结束后执行      |-                   |
 propFuncNot      |function    |没有权益执行      |-                   | 
 propOrder         |number     |中奖的索引   |                   | ——
 propReset         |number string     |更换不同值就行   |  | 
-propTips         |object     |over，noright 默认的操作提醒文案   |  | 
+propTips         |object     |over，noright 默认的操作提醒文案,设置为空就不提示了   |  | 
 
 
 如果定义了propFuncOver，就必须有propReset，手动重置动画  
