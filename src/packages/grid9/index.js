@@ -52,7 +52,7 @@ export default {
     data(){
         return {
             lotteryArr: [],
-            lotteryOrder: this.propOrder,   //中奖位置
+            lotteryOrder: LOTTERY_ORDER.indexOf(this.propOrder),   //中奖位置
             highLightIndex:0,               //自动旋转的位置
             uniformTimes: 0,                //默认旋转 匀速运动的次数
             spinIndex: 0,                   //记录当前累计此事
@@ -74,8 +74,7 @@ export default {
             }
         }*/
         propOrder(val){
-            this.lotteryOrder = val || -1;
-
+            this.lotteryOrder = LOTTERY_ORDER.indexOf(val);
         },
         propReset(val){
             if(val!='' && val!=0){
@@ -121,7 +120,6 @@ export default {
         //快速选择
         spinLottery() {
             let self = this;
-            self.loadingTimes++;
             if (self.speedDefaultTimer) {
                 //启动抽奖前 清除默认转动
                 this.uniformTimes = this.spinIndex;
@@ -140,7 +138,8 @@ export default {
                 clearTimeout(this.lotteryTimer);
                 setTimeout(() => {
                     if(LOTTERY_ORDER.indexOf(this.lotteryOrder)==-1){
-                        this.spinRest();
+                        this.spinRest(0);
+                        self.loadingTimes++;
                         if(this.loadingTimes<5){
                             this.spinLottery();
                         }else{
@@ -184,10 +183,10 @@ export default {
             }
         },
         //重置
-        spinRest(){
+        spinRest(type=1){
             //this.drawing = false;
             // this.spinIndex = 0;
-            this.spinIndex = this.spinIndex % 8-1;
+            this.spinIndex = this.spinIndex % 8-type;
             this.speed = SPEED_DEFAULT;
             this.lotteryOrder = -1;
             this.spinAllow = true;
@@ -195,8 +194,8 @@ export default {
 
         },
         stopCallback(lotteryOrder) {
+            //this.loadingTimes=0;
             console.log('抽奖结束回调', lotteryOrder)
-            this.loadingTimes=0;
             if(lotteryOrder>-1){
                 if(this.propFuncOver) {
                     this.propFuncOver();
@@ -208,17 +207,12 @@ export default {
                 this.spinRest();
                 //this.spinLottery();
             }
-            /*this.spinRest();
-             this.spinLottery();*/
-            //this.isModalWinningVisible = true
         },
         //点击中间位置
         getLottery(){
             if(this.propFuncClick) {
                 this.propFuncClick();
             }
-            /*this.spinRest();
-             */
             if(this.spinAllow){
                 if(this.propRights<1){
                     if(this.propFuncNot){

@@ -78,7 +78,7 @@ export default {
             ],
             gridReset:0,
             gridPrizeOrder:-1,
-            dataGridRight:1,
+            dataGridRight:3,
             last:0
         }
     },
@@ -104,8 +104,9 @@ export default {
                 propDelay:2000
             })
         },1000)*/
+        this.gridPrizeOrder=3
         setTimeout(()=>{
-            this.gridPrizeOrder=5
+            //this.gridPrizeOrder=3
         },8000)
 
     },
@@ -156,7 +157,7 @@ export default {
             })
         },
         gridFinish:function () {
-            this.toastPorp = {msg:'恭喜抽中', visible:'block'+new Date()};
+            //this.toastPorp = {msg:'恭喜抽中', visible:'block'+new Date()};
             this.dataGridRight--;
             setTimeout(()=>{
                 this.gridReset = new Date().getTime()
