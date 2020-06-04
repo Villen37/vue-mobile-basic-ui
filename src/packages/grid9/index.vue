@@ -1,5 +1,5 @@
 <template>
-<div :class="['vb-grid9 flex-blance']" @touchmove.prevent>
+<div :class="['vb-grid9 flex-blance']">
 
     <div :class="['item flex vb-grid9-item', highLightIndex==ind && 'vb-grid9-light']" v-if="lotteryArr.length==9" v-for="(item,ind) in lotteryArr">
         <div v-if="ind!=4" :class="['item-cont flex',item.name && 'cont-text']">

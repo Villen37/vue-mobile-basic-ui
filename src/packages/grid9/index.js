@@ -74,7 +74,6 @@ export default {
             }
         }*/
         propOrder(val){
-            console.log(val,'---val')
             this.lotteryOrder = val || -1;
 
         },
@@ -145,7 +144,7 @@ export default {
                         if(this.loadingTimes<5){
                             this.spinLottery();
                         }else{
-                            this.loadingTimes==0;
+                            this.loadingTimes=0;
                             this.toastPorp = {msg:'抽奖失败，请稍后～', visible:'block'+new Date()};
                         }
 
@@ -188,7 +187,7 @@ export default {
         spinRest(){
             //this.drawing = false;
             // this.spinIndex = 0;
-            this.spinIndex = this.spinIndex % 8;
+            this.spinIndex = this.spinIndex % 8-1;
             this.speed = SPEED_DEFAULT;
             this.lotteryOrder = -1;
             this.spinAllow = true;
@@ -197,6 +196,7 @@ export default {
         },
         stopCallback(lotteryOrder) {
             console.log('抽奖结束回调', lotteryOrder)
+            this.loadingTimes=0;
             if(lotteryOrder>-1){
                 if(this.propFuncOver) {
                     this.propFuncOver();
