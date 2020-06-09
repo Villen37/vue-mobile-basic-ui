@@ -144,7 +144,7 @@ export default {
                             this.spinLottery();
                         }else{
                             this.loadingTimes=0;
-                            this.toastPorp = {msg:'抽奖失败，请稍后～', visible:'block'+new Date()};
+                            this.toastPorp = {msg:'抽奖失败，请稍后重试~', visible:'block'+new Date()};
                         }
 
                     }else{
