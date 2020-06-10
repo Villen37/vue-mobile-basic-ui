@@ -146,6 +146,10 @@ export default {
                 this.aniModalC=false
             },3000)
         },
+        onCloseC:function () {
+            console.log('000000---')
+        },
+
         showModalD:function () {
             this.aniModalD=new Date()
         },
