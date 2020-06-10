@@ -104,7 +104,8 @@ export default {
                 propDelay:2000
             })
         },1000)*/
-        this.gridPrizeOrder=3
+        this.gridPrizeOrder=7
+
         setTimeout(()=>{
             //this.gridPrizeOrder=3
         },8000)
@@ -161,7 +162,7 @@ export default {
             this.dataGridRight--;
             setTimeout(()=>{
                 this.gridReset = new Date().getTime()
-            },2000)
+            },5000)
         },
         gridNoRight:function () {
             this.toastPorp = {msg:'走开', visible:'block'+new Date()};

@@ -5,7 +5,7 @@ const ACCELERATED_SPEED = 200;// 加速度
 // 定义转盘旋转的顺序， value 值为奖品在列表中的index
 const LOTTERY_ORDER = [0, 1, 2, 5, 8, 7, 6, 3];
 import vbToast from '../toast/index.vue';
-
+const orderArr = [0,1,2,4,7,6,5,3];
 export default {
     name: 'vbGrid9',
     props: {
@@ -52,7 +52,7 @@ export default {
     data(){
         return {
             lotteryArr: [],
-            lotteryOrder: LOTTERY_ORDER.indexOf(this.propOrder),   //中奖位置
+            lotteryOrder: orderArr.indexOf(this.propOrder),   //中奖位置
             highLightIndex:0,               //自动旋转的位置
             uniformTimes: 0,                //默认旋转 匀速运动的次数
             spinIndex: 0,                   //记录当前累计此事
@@ -74,7 +74,8 @@ export default {
             }
         }*/
         propOrder(val){
-            this.lotteryOrder = LOTTERY_ORDER.indexOf(val);
+            this.lotteryOrder = orderArr.indexOf(val);
+            console.log(this.lotteryOrder,'-----')
         },
         propReset(val){
             if(val!='' && val!=0){
@@ -137,10 +138,10 @@ export default {
                 console.log('抽奖结束', this.uniformTimes % 8, Math.abs(this.lotteryOrder - this.uniformTimes % 8 + 8))
                 clearTimeout(this.lotteryTimer);
                 setTimeout(() => {
-                    if(LOTTERY_ORDER.indexOf(this.lotteryOrder)==-1){
+                    if(orderArr.indexOf(this.lotteryOrder)==-1){
                         this.spinRest(0);
                         self.loadingTimes++;
-                        if(this.loadingTimes<5){
+                        if(this.loadingTimes<3){
                             this.spinLottery();
                         }else{
                             this.loadingTimes=0;
