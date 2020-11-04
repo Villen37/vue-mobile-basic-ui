@@ -1,10 +1,10 @@
 {
   "name": "vue-mobile-basic-ui",
-  "email":"1204147289@qq.com",
-  "version": "1.4.6",
+  "email": "1204147289@qq.com",
+  "version": "1.4.8",
   "description": "A basic front-end vue ui coponents library",
   "main": "lib/vueMobileBasicUi.min.js",
-  "source":"open source in github, you can search name",
+  "source": "open source in github, you can search name",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode production",

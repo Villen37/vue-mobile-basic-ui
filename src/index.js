@@ -9,6 +9,7 @@ import vbModalContainer from './packages/modal-container/index.vue';
 import vbModalDialogue from './packages/modal-dialogue/index.vue';
 import vbToast from './packages/toast/index.vue';
 import vbGrid9 from './packages/grid9/index.vue';
+import vbProgress from './packages/progress/index.vue';
 
 import vbjsModalDialogue from './packages/modal-dialogue/modal.js';
 import vbjsToast from './packages/toast/toast.js';
@@ -21,7 +22,8 @@ const components = {
     vbModalContainer,
     vbModalDialogue,
     vbToast,
-    vbGrid9
+    vbGrid9,
+    vbProgress
 };
 
 const install = function (Vue, opts = {}) {
