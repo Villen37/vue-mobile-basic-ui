@@ -21,6 +21,8 @@ import vbProgress from '../../packages/progress/index.vue';
 // 9宫格
 import vbGrid9 from '../../packages/grid9/index.vue';
 
+const img =  'https://miaomushan.top/date/img/qun.jpeg'
+
 //------注册
 import toast from '../../packages/toast/toast';
 import modal from '../../packages/modal-dialogue/modal';
@@ -43,35 +45,35 @@ export default {
             dataProgressDesc :['一百','二百','三百','四百','五百'],
             dataGrids:[
                 {
-                    icon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    icon: img,
                     name: "黄金VIP天卡"
                 },
                 {
-                    icon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    icon: img,
                     name: "黄金VIP周卡",
                 },
                 {
-                    icon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    icon: img,
                     name: "黄金VIP月卡",
                 },
                 {
-                    icon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    icon: img,
                     name: "88金币"
                 },
                 {
-                    icon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    icon: img,
                     name: "黄金VIP季卡"
                 },
                 {
-                    icon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    icon: img,
                     name: "188金币"
                 },
                 {
-                    icon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    icon: img,
                     name: "黄金VIP年卡"
                 },
                 {
-                    icon: "http://cdn01.happyjuzi.com/27/8b/ad5b5a7c002ca919d70bc0d4e55f.jpg?imageMogr2/thumbnail/!350x190r",
+                    icon: img,
                     name: "688金币"
                 }
 
