@@ -4,7 +4,7 @@
         <slot></slot>
         <div :class="['vb-roll-list-body', classAnimate]" :style="{transform: setTransY}"  ref="rollBody">
             <!--slot name="listContent"></slot>-->
-            <div class="list-item line-clamp-1" v-for="(item, index) in propData">{{item}}</div>
+            <div class="list-item line-clamp-1" v-for="(item, index) in propData" :key="item">{{item}}</div>
         </div>
     </div>
 </template>

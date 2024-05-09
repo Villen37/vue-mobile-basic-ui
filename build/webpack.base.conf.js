@@ -3,6 +3,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin'); // html
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
+const {
+    CleanWebpackPlugin
+} = require('clean-webpack-plugin'); // 清理dist文件夹
+
 module.exports = {
   entry: path.resolve(__dirname, '../src/view/index.js'),
   resolve: {
@@ -56,6 +60,7 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       // Options similar to the same options in webpackOptions.output
       // both options are optional

@@ -4,7 +4,7 @@
 const path = require("path");
 const webpack = require("webpack");
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
-const uglify = require("uglifyjs-webpack-plugin");
+const UglifyJSPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 
@@ -72,6 +72,7 @@ module.exports = {
         ]
     },
     plugins: [
+        new UglifyJSPlugin(),
         new MiniCssExtractPlugin({
             filename: `style/vueMobileBasicUi.min.css`
         }),

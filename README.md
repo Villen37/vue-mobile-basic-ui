@@ -1,11 +1,21 @@
-# vue-mobile-basic-ui
-在VUE开发中有一些组件ui其实不需要区分平台和类型，这里做了一些封装，可以应用在一些简单交互上，快捷方便。
+## vue-mobile-basic-ui
+针对Vue开发中常见的基础功能进行封装，诸如toast、下拉等不需要设计师过多参与的交互，引入到项目中，快速搭建项目和支持业务。
 
-html的"font-size:100px"下，UI正常使用
+为保证移动端UI的兼容性，我们把html的"font-size:100px"，页面通过rem做样式设计。
 
-#### 使用：npm install vue-mobile-basic-ui
+开源地址：https://github.com/Villen37/vue-mobile-basic-ui
+## 项目调试
+ ```javascript
+ npm run src/view
+ // 进入http://localhost.dev.com:9000/index.html
+ ```
 
 ## 基本用法
+
+ ```javascript
+ // 下载
+ npm install vue-mobile-basic-ui
+ ```
 
 在入口函数内 插入代码全局注册(组件即不需单独引用，同时自动绑定方法在vue.prototype)
  ```javascript
@@ -16,7 +26,7 @@ html的"font-size:100px"下，UI正常使用
 
 ## 具体组件
 
-### vbToast  信息提示
+#### vbToast  信息提示
 
 ```javascript
 // 如果组件库全局注册
@@ -48,7 +58,7 @@ propImgBreak   |string      |破裂图          |本地图              | ——
 onReload       |Function    |点击重试        |——                    | ——
 
 
-### vbScrollStop  滚动后停止
+#### vbScrollStop  滚动后停止
 
 ```javascript
 import { vbScrollStop } from 'vue-mobile-basic-ui'
@@ -60,7 +70,7 @@ propIcon       |string      |左侧可以显示图片  |——                  
 
 propIcon为空的时候可以自定义slot。使用时，最好外面包一层容器
 
-### vbPulldwonRefresh  下拉刷新，整个页面上的使用
+#### vbPulldwonRefresh  下拉刷新，整个页面上的使用
 
 ```javascript
 import { vbPulldwonRefresh } from 'vue-mobile-basic-ui'
@@ -74,7 +84,7 @@ propKey2       |string      |展示文案        |加载中                | —
 
 touchEnd的回调 @listeningEmit="自己的方法"，也可以通过执行回调里的option.fun，来结束下拉动画
 
-### vbRollList 数据单行滚动
+#### vbRollList 数据单行滚动
 
 ```javascript
 import { vbRollList } from 'vue-mobile-basic-ui'
@@ -86,7 +96,7 @@ propIcon       |string      |设置图标         |               | ——
 
 支持slot
 
-### vbModalContainer  modal的黑色半透明背景的容器
+#### vbModalContainer  modal的黑色半透明背景的容器
 
 ```javascript
 import { vbModalContainer } from 'vue-mobile-basic-ui'
@@ -99,7 +109,7 @@ onClose        |Function    |关闭回调        |——                    | �
 
 slot自己把内容丢进去
 
-### vbModalDialogue  modal的黑色半透明背景的容器
+#### vbModalDialogue  modal的黑色半透明背景的容器
 
 ```javascript
 // 如果组件库全局注册
@@ -126,7 +136,7 @@ import { vbModalDialogue } from 'vue-mobile-basic-ui'
 |isCanClickMask  |Boolean           |是否点击遮罩关闭       |true                        |true/false
 
 
-### vbProgress 进度条
+#### vbProgress 进度条
 
 ```javascript
 import { vbProgress } from 'vue-mobile-basic-ui'
@@ -142,7 +152,7 @@ propDefaultMark  |Boolean     |进度头有个默认的圆点   |true           
 slot 可以写一个气泡，位置是跟随进度条的，如果不用，propDefaultMark设置为false  
 propTopArr、propBotArr中的元素可以是html，满足多种样式需求
 
-### vbGrid9 9宫格抽奖
+#### vbGrid9 9宫格抽奖
 
 ```javascript
 import { vbGrid9 } from 'vue-mobile-basic-ui'

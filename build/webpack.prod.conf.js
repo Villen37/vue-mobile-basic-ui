@@ -2,10 +2,6 @@ const path = require('path');
 const merge = require("webpack-merge");
 const baseConfig = require('./webpack.base.conf');
 // const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const {
-  CleanWebpackPlugin
-} = require('clean-webpack-plugin'); // 清理dist文件夹
-
 module.exports = merge(baseConfig, {
   mode: 'production',
   output: {
@@ -41,6 +37,5 @@ module.exports = merge(baseConfig, {
     //   filename: '[name].css',
     //   chunkFilename: '[id].css',
     // }),
-    new CleanWebpackPlugin(),
   ]
 })
